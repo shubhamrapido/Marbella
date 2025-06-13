@@ -5,6 +5,7 @@ import About from '../components/Homepage/About';
 import Product from '../components/Homepage/Product';
 import  Contact  from '../components/Homepage/Contact'; // Adjust path as per your structure
 import Footer from '../components/Homepage/Footer';
+import Client from '../components/Homepage/Client';
 
 
 const Homepage = () => {
@@ -14,6 +15,7 @@ const Homepage = () => {
       <Hero/>
       <About />
       <Product />
+      <Client />
       <Contact/>
       <Footer />
       {/* Other homepage content goes here */}

@@ -57,17 +57,24 @@ const Footer = () => {
       </div>
 
       {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <div className="fixed bottom-6 right-16 md:right-6 z-50 group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
-          <button
-            onClick={scrollToTop}
-            className="relative w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-yellow-600 text-white shadow-lg hover:shadow-amber-500/30 transition-all duration-300 transform hover:scale-105"
-          >
-            <ArrowUp size={22} />
-          </button>
-        </div>
-      )}
+{showScrollTop && (
+  <div className="fixed bottom-6 right-6 z-50 group">
+    {/* Glowing background ring */}
+    <div className="absolute -inset-1 bg-gradient-to-br from-white/30 via-amber-300/30 to-stone-400/30 rounded-full blur-lg opacity-60 group-hover:opacity-90 transition duration-500 animate-pulse" />
+
+    <button
+      onClick={scrollToTop}
+      className="relative w-12 h-12 flex items-center justify-center rounded-full
+        bg-gradient-to-br from-white via-slate-200 to-amber-100
+        text-stone-700 shadow-xl hover:shadow-amber-400/40
+        border border-white/50 backdrop-blur-sm
+        transition-all duration-300 transform hover:scale-110"
+    >
+      <ArrowUp size={22} />
+    </button>
+  </div>
+)}
+
     </footer>
   );
 };
