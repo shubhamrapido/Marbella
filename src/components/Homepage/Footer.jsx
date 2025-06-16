@@ -17,64 +17,106 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative py-8 px-4 sm:px-8 lg:px-16 overflow-hidden">
-      {/* Marble Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-amber-900/10 via-transparent to-yellow-900/5"></div>
-      
-      {/* Marble veining */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent transform -rotate-6"></div>
-        <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-400/20 to-transparent transform rotate-3"></div>
-        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-amber-300/15 to-transparent transform skew-x-12"></div>
+    <footer className="relative py-12 px-6 lg:px-12 overflow-hidden bg-gradient-to-b from-blue-950 via-indigo-950 to-blue-900">
+      {/* Holographic Background Effects */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-cyan-600/20 animate-pulse-slow"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_rgba(59,130,246,0.2)_0%,_transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,_rgba(6,182,212,0.2)_0%,_transparent_50%)]"></div>
       </div>
 
-      <div className="relative max-w-[1200px] mx-auto flex flex-col sm:flex-wrap lg:flex-row justify-between items-center gap-6 text-center lg:text-left">
-        {/* Left Section */}
-        <p className="text-sm text-gray-300">
-          © 2024 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-white font-bold">MARBLE Granite & Marble.</span> All rights reserved.
-        </p>
+      {/* Floating Holographic Orbs */}
+      {[...Array(5)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute w-4 h-4 bg-blue-400 rounded-full blur-sm animate-float"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${i * 0.5}s`,
+            animationDuration: `${5 + i}s`,
+          }}
+        />
+      ))}
 
-        {/* Middle Links */}
-        <div className="flex flex-wrap justify-center gap-4 text-sm">
-          <a href="#" className="text-gray-300 hover:text-white transition-all duration-300 hover:text-amber-200">Privacy Policy</a>
-          <a href="#" className="text-gray-300 hover:text-white transition-all duration-300 hover:text-amber-200">Terms of Service</a>
-          <a href="#" className="text-gray-300 hover:text-white transition-all duration-300 hover:text-amber-200">Sitemap</a>
+      {/* Main Content */}
+      <div className="relative max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
+        {/* Left Section - Copyright */}
+        <div className="group relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+          <p className="relative text-sm text-blue-200 font-medium bg-blue-800/50 backdrop-blur-md px-6 py-3 rounded-lg border border-blue-400/30 shadow-lg">
+            © 2024{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 font-bold">
+              MARBELLA Granite & Marble.
+            </span>{" "}
+            All rights reserved.
+          </p>
         </div>
 
-        {/* Right Section - Social */}
-        <div className="flex flex-wrap justify-center items-center gap-3 text-sm">
-          <span className="text-gray-300">Follow Us:</span>
-          {["f", "in", "ig"].map((label, idx) => (
-            <div
-              key={idx}
-              className="w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-br from-gray-700 to-gray-800 text-white text-xs font-medium hover:from-amber-500 hover:to-yellow-600 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-amber-500/25 transform hover:scale-110"
-            >
-              {label}
+        {/* Middle Links - Holographic Tabs */}
+        <div className="flex flex-wrap justify-center gap-3">
+          {["Privacy Policy", "Terms of Service", "Sitemap"].map((link, idx) => (
+            <div key={idx} className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-cyan-500/30 rounded-lg blur opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              <a
+                href="#"
+                className="relative text-sm text-blue-200 font-medium px-5 py-2 bg-blue-900/40 backdrop-blur-sm border border-blue-400/30 rounded-lg hover:text-cyan-300 transition-all duration-300 group-hover:shadow-cyan-500/20"
+              >
+                {link}
+              </a>
             </div>
           ))}
+        </div>
+
+        {/* Right Section - Social Icons */}
+        <div className="flex items-center gap-4">
+          <span className="text-blue-200 text-sm font-medium">Follow Us:</span>
+          <div className="flex gap-2">
+            {["f", "in", "ig"].map((label, idx) => (
+              <div
+                key={idx}
+                className="group relative w-10 h-10 flex items-center justify-center rounded-full bg-blue-800/50 border border-blue-400/30 backdrop-blur-md cursor-pointer transition-all duration-300 hover:bg-blue-700/70 hover:border-cyan-400/50 hover:scale-110 hover:shadow-cyan-500/30"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <span className="relative text-blue-100 text-sm font-medium group-hover:text-cyan-300 transition-colors duration-300">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Scroll to Top Button */}
-{showScrollTop && (
-  <div className="fixed bottom-6 right-6 z-50 group">
-    {/* Glowing background ring */}
-    <div className="absolute -inset-1 bg-gradient-to-br from-white/30 via-amber-300/30 to-stone-400/30 rounded-full blur-lg opacity-60 group-hover:opacity-90 transition duration-500 animate-pulse" />
+      {showScrollTop && (
+        <div className="fixed bottom-8 right-8 z-50 group">
+          <div className="absolute -inset-2 bg-gradient-to-br from-blue-500/40 via-cyan-400/40 to-blue-600/40 rounded-full blur-xl opacity-60 group-hover:opacity-90 transition-all duration-500 animate-pulse"></div>
+          <button
+            onClick={scrollToTop}
+            className="relative w-14 h-14 flex items-center justify-center rounded-full bg-blue-900/60 backdrop-blur-md border border-blue-400/30 text-blue-200 shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 transform hover:scale-110 hover:bg-blue-800/70 hover:border-cyan-400/50"
+          >
+            <ArrowUp size={24} className="group-hover:text-cyan-300 transition-colors duration-300" />
+          </button>
+        </div>
+      )}
 
-    <button
-      onClick={scrollToTop}
-      className="relative w-12 h-12 flex items-center justify-center rounded-full
-        bg-gradient-to-br from-white via-slate-200 to-amber-100
-        text-stone-700 shadow-xl hover:shadow-amber-400/40
-        border border-white/50 backdrop-blur-sm
-        transition-all duration-300 transform hover:scale-110"
-    >
-      <ArrowUp size={22} />
-    </button>
-  </div>
-)}
-
+      {/* Custom Styles */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0) translateX(0); }
+          50% { transform: translateY(-15px) translateX(10px); }
+        }
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.5; }
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 8s ease-in-out infinite;
+        }
+      `}</style>
     </footer>
   );
 };

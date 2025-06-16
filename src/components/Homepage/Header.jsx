@@ -7,74 +7,75 @@ const Header = () => {
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-md">
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-white to-gray-100 opacity-95"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-50/20 to-gray-200/30"></div>
+    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg">
+      {/* Cyberpunk Background Layers */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-950 via-indigo-950 to-blue-900 opacity-90"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/20 via-transparent to-blue-600/20 animate-pulse-slow"></div>
 
-      {/* Marble veins */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-gray-400/40 to-transparent transform -skew-x-12 animate-pulse"></div>
-        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-gray-500/30 to-transparent transform skew-x-6 animate-pulse delay-1000"></div>
-        <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-gray-300/50 to-transparent transform -skew-x-3 animate-pulse delay-500"></div>
+      {/* Holographic Circuit Patterns */}
+      <div className="absolute inset-0 opacity-20">
+        <svg className="w-full h-full">
+          <line x1="10%" y1="0" x2="90%" y2="100%" stroke="cyan" strokeWidth="1" strokeDasharray="5,5" className="animate-dash" />
+          <line x1="90%" y1="0" x2="10%" y2="100%" stroke="blue" strokeWidth="1" strokeDasharray="5,5" className="animate-dash" style={{ animationDelay: '0.5s' }} />
+        </svg>
       </div>
 
       <div className="relative max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
         {/* Logo */}
         <div className="relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-gray-400 via-white to-gray-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-          <div className="relative text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-gray-700 to-slate-900 tracking-wider flex items-center">
-            <Sparkles className="w-6 h-6 text-amber-500 mr-2 animate-pulse" />
+          <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg blur-lg opacity-40 group-hover:opacity-70 transition-all duration-500"></div>
+          <div className="relative text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 tracking-wider flex items-center">
+            <Sparkles className="w-6 h-6 text-cyan-400 mr-2 animate-spin-slow" />
             MARBLE
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full animate-ping"></div>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-cyan-400 rounded-full animate-ping"></div>
           </div>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8 text-gray-800 font-semibold">
-          <Link to="/" className="relative py-2 px-4 transition-all duration-300 hover:text-slate-900 group">
+        <nav className="hidden md:flex space-x-8 text-blue-200 font-semibold">
+          <Link to="/" className="relative py-2 px-4 transition-all duration-300 hover:text-cyan-300 group">
             <span className="relative z-10">Home</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-white to-gray-200 rounded-lg opacity-0 group-hover:opacity-80 transition-all duration-300 transform scale-95 group-hover:scale-100"></div>
-            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-yellow-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-cyan-600/30 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100"></div>
+            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
           </Link>
 
-          <Link to="/about" className="relative py-2 px-4 transition-all duration-300 hover:text-slate-900 group">
+          <Link to="/about" className="relative py-2 px-4 transition-all duration-300 hover:text-cyan-300 group">
             <span className="relative z-10">About</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-white to-gray-200 rounded-lg opacity-0 group-hover:opacity-80 transition-all duration-300 transform scale-95 group-hover:scale-100"></div>
-            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-yellow-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-cyan-600/30 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100"></div>
+            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
           </Link>
 
-          <Link to="/products" className="relative py-2 px-4 transition-all duration-300 hover:text-slate-900 group">
+          <Link to="/products" className="relative py-2 px-4 transition-all duration-300 hover:text-cyan-300 group">
             <span className="relative z-10">Products</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-white to-gray-200 rounded-lg opacity-0 group-hover:opacity-80 transition-all duration-300 transform scale-95 group-hover:scale-100"></div>
-            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-yellow-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-cyan-600/30 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100"></div>
+            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
           </Link>
 
-          <Link to="/client" className="relative py-2 px-4 transition-all duration-300 hover:text-slate-900 group">
+          <Link to="/client" className="relative py-2 px-4 transition-all duration-300 hover:text-cyan-300 group">
             <span className="relative z-10">Client</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-white to-gray-200 rounded-lg opacity-0 group-hover:opacity-80 transition-all duration-300 transform scale-95 group-hover:scale-100"></div>
-            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-yellow-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-cyan-600/30 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100"></div>
+            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
           </Link>
         </nav>
 
         {/* Right Section */}
         <div className="hidden md:flex items-center space-x-6">
-          <div className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-gray-100 to-white rounded-full shadow-sm hover:shadow-md transition-all duration-300 group">
-            <Phone className="w-4 h-4 text-amber-600 group-hover:animate-bounce" />
-            <span className="text-gray-800 font-semibold">800 45293</span>
+          <div className="flex items-center space-x-2 px-4 py-2 bg-blue-800/50 backdrop-blur-sm rounded-full border border-blue-400/30 shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 group">
+            <Phone className="w-4 h-4 text-cyan-400 group-hover:animate-bounce" />
+            <span className="text-blue-200 font-semibold">800 45293</span>
           </div>
-          <div className="p-3 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer group">
-            <Search className="w-5 h-5 text-white group-hover:rotate-12 transition-transform duration-300" />
+          <div className="p-3 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-full shadow-lg hover:shadow-cyan-500/40 transform hover:scale-105 transition-all duration-300 cursor-pointer group">
+            <Search className="w-5 h-5 text-blue-100 group-hover:rotate-12 transition-transform duration-300" />
           </div>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden -mr-4">
-          <button onClick={toggleMenu} className="p-3 bg-gradient-to-br from-gray-200 to-white rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 ">
+          <button onClick={toggleMenu} className="p-3 bg-blue-800/50 backdrop-blur-sm rounded-full border border-blue-400/30 shadow-lg hover:shadow-cyan-500/30 transform hover:scale-105 transition-all duration-300">
             {isMobileMenuOpen ? (
-              <X className="text-gray-800 w-6 h-6 transform rotate-180 transition-transform duration-300" />
+              <X className="text-blue-200 w-6 h-6 transform rotate-180 transition-transform duration-300" />
             ) : (
-              <Menu className="text-gray-800 w-6 h-6" />
+              <Menu className="text-blue-200 w-6 h-6" />
             )}
           </button>
         </div>
@@ -83,7 +84,7 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-98"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-indigo-950 to-blue-900 opacity-98"></div>
           <div className="relative px-6 py-6 space-y-4">
             {[
               { name: 'Home', to: '/' },
@@ -94,7 +95,7 @@ const Header = () => {
               <Link
                 key={name}
                 to={to}
-                className="block py-3 px-4 text-gray-800 font-semibold rounded-lg hover:bg-gradient-to-r hover:from-gray-100 hover:to-white transition-all duration-300 transform hover:translate-x-2"
+                className="block py-3 px-4 text-blue-200 font-semibold rounded-lg bg-blue-800/50 backdrop-blur-sm border border-blue-400/30 hover:bg-blue-700/50 hover:border-cyan-400/50 transition-all duration-300 transform hover:translate-x-2"
                 style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -102,14 +103,14 @@ const Header = () => {
               </Link>
             ))}
 
-            <div className="pt-4 border-t border-gray-200">
-              <div className="flex items-center space-x-3 py-3 px-4 bg-gradient-to-r from-gray-100 to-white rounded-lg mb-3">
-                <Phone className="w-5 h-5 text-amber-600" />
-                <span className="text-gray-800 font-semibold">800 45293</span>
+            <div className="pt-4 border-t border-blue-400/30">
+              <div className="flex items-center space-x-3 py-3 px-4 bg-blue-800/50 backdrop-blur-sm rounded-lg border border-blue-400/30 mb-3">
+                <Phone className="w-5 h-5 text-cyan-400" />
+                <span className="text-blue-200 font-semibold">800 45293</span>
               </div>
               <div className="flex justify-center">
-                <div className="p-3 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-full shadow-lg">
-                  <Search className="w-5 h-5 text-white" />
+                <div className="p-3 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-full shadow-lg hover:shadow-cyan-500/40">
+                  <Search className="w-5 h-5 text-blue-100" />
                 </div>
               </div>
             </div>
@@ -117,8 +118,33 @@ const Header = () => {
         </div>
       )}
 
-      {/* Bottom border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+      {/* Bottom Border */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+
+      {/* Custom Styles */}
+      <style jsx>{`
+        @keyframes dash {
+          0% { stroke-dashoffset: 0; }
+          100% { stroke-dashoffset: 20; }
+        }
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 0.2; }
+          50% { opacity: 0.4; }
+        }
+        .animate-dash {
+          animation: dash 3s linear infinite;
+        }
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 6s ease-in-out infinite;
+        }
+      `}</style>
     </header>
   );
 };
