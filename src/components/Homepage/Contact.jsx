@@ -43,7 +43,6 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Left - Form */}
           <div className="relative bg-blue-900/40 backdrop-blur-lg p-8 rounded-2xl border border-blue-400/30 shadow-[0_8px_32px_rgba(0,0,255,0.2)] overflow-hidden">
-            {/* Glowing Border Effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-2xl blur-lg opacity-70 hover:opacity-100 transition-all duration-500"></div>
 
             <div className="relative z-10">
@@ -52,48 +51,37 @@ const ContactSection = () => {
               </h3>
 
               <div className="space-y-6">
-                {/* Name & Email */}
                 <div className="flex flex-col sm:flex-row gap-5">
                   <div className="w-full group">
-                    <label className="block text-sm font-medium mb-2 text-blue-200">
-                      Name
-                    </label>
+                    <label className="block text-sm font-medium mb-2 text-blue-200">Name</label>
                     <input
                       type="text"
-                      className="w-full border border-blue-400/30 rounded-lg px-4 py-3 text-sm placeholder-blue-300/50 text-blue-100 bg-blue-800/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 group-hover:border-cyan-400/50"
+                      className="w-full border border-blue-400/30 rounded-lg px-4 py-3 text-sm placeholder-blue-300/50 text-blue-100 bg-blue-800/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300"
                       placeholder="Your name"
                     />
                   </div>
                   <div className="w-full group">
-                    <label className="block text-sm font-medium mb-2 text-blue-200">
-                      Email
-                    </label>
+                    <label className="block text-sm font-medium mb-2 text-blue-200">Email</label>
                     <input
                       type="email"
-                      className="w-full border border-blue-400/30 rounded-lg px-4 py-3 text-sm placeholder-blue-300/50 text-blue-100 bg-blue-800/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 group-hover:border-cyan-400/50"
+                      className="w-full border border-blue-400/30 rounded-lg px-4 py-3 text-sm placeholder-blue-300/50 text-blue-100 bg-blue-800/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300"
                       placeholder="Your email"
                     />
                   </div>
                 </div>
 
-                {/* Phone */}
                 <div className="group">
-                  <label className="block text-sm font-medium mb-2 text-blue-200">
-                    Phone
-                  </label>
+                  <label className="block text-sm font-medium mb-2 text-blue-200">Phone</label>
                   <input
                     type="tel"
-                    className="w-full border border-blue-400/30 rounded-lg px-4 py-3 text-sm placeholder-blue-300/50 text-blue-100 bg-blue-800/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 group-hover:border-cyan-400/50"
+                    className="w-full border border-blue-400/30 rounded-lg px-4 py-3 text-sm placeholder-blue-300/50 text-blue-100 bg-blue-800/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300"
                     placeholder="Your phone number"
                   />
                 </div>
 
-                {/* Project Type */}
                 <div className="group">
-                  <label className="block text-sm font-medium mb-2 text-blue-200">
-                    Project Type
-                  </label>
-                  <select className="w-full border border-blue-400/30 rounded-lg px-4 py-3 text-sm text-blue-100 bg-blue-800/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 group-hover:border-cyan-400/50">
+                  <label className="block text-sm font-medium mb-2 text-blue-200">Project Type</label>
+                  <select className="w-full border border-blue-400/30 rounded-lg px-4 py-3 text-sm text-blue-100 bg-blue-800/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300">
                     <option className="bg-blue-900">Select Project Type</option>
                     <option className="bg-blue-900">Residential Marble</option>
                     <option className="bg-blue-900">Commercial Marble</option>
@@ -101,25 +89,21 @@ const ContactSection = () => {
                   </select>
                 </div>
 
-                {/* Message */}
                 <div className="group">
-                  <label className="block text-sm font-medium mb-2 text-blue-200">
-                    Message
-                  </label>
+                  <label className="block text-sm font-medium mb-2 text-blue-200">Message</label>
                   <textarea
                     rows="4"
-                    className="w-full border border-blue-400/30 rounded-lg px-4 py-3 text-sm placeholder-blue-300/50 text-blue-100 bg-blue-800/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 group-hover:border-cyan-400/50 resize-none"
+                    className="w-full border border-blue-400/30 rounded-lg px-4 py-3 text-sm placeholder-blue-300/50 text-blue-100 bg-blue-800/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 resize-none"
                     placeholder="Tell us about your marble project requirements..."
                   />
                 </div>
 
-                {/* Button */}
                 <button
                   type="submit"
                   className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 text-white text-sm font-semibold py-3 rounded-lg shadow-lg hover:shadow-cyan-500/40 transform hover:scale-[1.02] relative overflow-hidden"
                 >
                   <span className="relative z-10">Send Message</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </button>
               </div>
             </div>
@@ -127,9 +111,7 @@ const ContactSection = () => {
 
           {/* Right - Info + Map */}
           <div className="flex flex-col gap-8">
-            {/* Contact Info */}
             <div className="relative bg-blue-900/50 backdrop-blur-lg p-8 rounded-2xl border border-blue-400/30 shadow-[0_8px_32px_rgba(0,0,255,0.2)] overflow-hidden">
-              {/* Cosmic Glow Overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-lg opacity-70"></div>
 
               <div className="relative z-10">
@@ -145,13 +127,11 @@ const ContactSection = () => {
                       <Phone className="text-blue-100" size={24} />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-blue-100">
-                        Call Us
-                      </p>
+                      <p className="font-semibold text-sm text-blue-100">Call Us</p>
                       <p className="text-sm text-blue-200">
-                        800 MARBLE (627253)
+                        +971 6 531 1778
                         <br />
-                        Available 24/7
+                        Sunday to Friday
                       </p>
                     </div>
                   </div>
@@ -162,30 +142,26 @@ const ContactSection = () => {
                       <Mail className="text-blue-100" size={24} />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-blue-100">
-                        Email Us
-                      </p>
+                      <p className="font-semibold text-sm text-blue-100">Email Us</p>
                       <p className="text-sm text-blue-200">
-                        info@marble.ae
+                        info@almezoon-uae.com
                         <br />
-                        Quick response guaranteed
+                        Fast response guaranteed
                       </p>
                     </div>
                   </div>
 
-                  {/* Locations */}
+                  {/* Address */}
                   <div className="flex items-start gap-4 group cursor-pointer">
                     <div className="bg-gradient-to-br from-blue-600 to-cyan-600 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300">
                       <MapPin className="text-blue-100" size={24} />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-blue-100">
-                        Visit Our Marble Showrooms
-                      </p>
+                      <p className="font-semibold text-sm text-blue-100">Visit Us</p>
                       <p className="text-sm text-blue-200">
-                        Dubai • Abu Dhabi • Sharjah
+                        Al Sajja Industrial Area,
                         <br />
-                        Premium marble collections
+                        Sharjah, UAE
                       </p>
                     </div>
                   </div>
@@ -197,7 +173,7 @@ const ContactSection = () => {
             <div className="relative rounded-2xl overflow-hidden w-full h-[230px] bg-blue-800/30 backdrop-blur-sm border border-blue-400/30 shadow-[0_8px_32px_rgba(0,0,255,0.2)]">
               <iframe
                 title="Marble Showroom Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562518.690751293!2d76.1993554!3d23.6101808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397d3268b62b08e1%3A0x7146cf9f7ac8ae78!2sIndia!5e0!3m2!1sen!2sin!4v1718100301646!5m2!1sen!2sin"
+                src="https://www.google.com/maps?q=Al+Mezoon+Marbles,+Al+Sajja+Industrial+Area,+Sharjah,+UAE&output=embed"
                 width="100%"
                 height="100%"
                 allowFullScreen=""
@@ -205,13 +181,10 @@ const ContactSection = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full border-0 rounded-2xl"
               />
-
               <div className="absolute bottom-4 left-4 bg-blue-900/80 backdrop-blur-md p-3 rounded-lg border border-blue-400/30">
-                <h4 className="font-bold text-base sm:text-lg text-blue-100">
-                  Visit Our Marble Showrooms
-                </h4>
+                <h4 className="font-bold text-base sm:text-lg text-blue-100">Visit Our Showroom</h4>
                 <p className="text-sm text-blue-200 opacity-90">
-                  Experience our premium marble collections
+                  Explore premium marble at Al Sajja, Sharjah
                 </p>
               </div>
             </div>

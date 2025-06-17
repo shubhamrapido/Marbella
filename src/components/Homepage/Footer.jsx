@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { ArrowUp } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -16,77 +22,15 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const socials = [
+    { icon: <FaFacebookF />, color: "bg-blue-600", url: "#" },
+    { icon: <FaInstagram />, color: "bg-pink-500", url: "#" },
+    { icon: <FaWhatsapp />, color: "bg-green-500", url: "#" },
+    { icon: <FaYoutube />, color: "bg-red-600", url: "#" },
+  ];
+
   return (
-    <footer className="relative py-12 px-6 lg:px-12 overflow-hidden bg-gradient-to-b from-blue-950 via-indigo-950 to-blue-900">
-      {/* Holographic Background Effects */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-cyan-600/20 animate-pulse-slow"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_rgba(59,130,246,0.2)_0%,_transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,_rgba(6,182,212,0.2)_0%,_transparent_50%)]"></div>
-      </div>
-
-      {/* Floating Holographic Orbs */}
-      {[...Array(5)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute w-4 h-4 bg-blue-400 rounded-full blur-sm animate-float"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${i * 0.5}s`,
-            animationDuration: `${5 + i}s`,
-          }}
-        />
-      ))}
-
-      {/* Main Content */}
-      <div className="relative max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
-        {/* Left Section - Copyright */}
-        <div className="group relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-          <p className="relative text-sm text-blue-200 font-medium bg-blue-800/50 backdrop-blur-md px-6 py-3 rounded-lg border border-blue-400/30 shadow-lg">
-            © 2024{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 font-bold">
-              MARBELLA Granite & Marble.
-            </span>{" "}
-            All rights reserved.
-          </p>
-        </div>
-
-        {/* Middle Links - Holographic Tabs */}
-        <div className="flex flex-wrap justify-center gap-3">
-          {["Privacy Policy", "Terms of Service", "Sitemap"].map((link, idx) => (
-            <div key={idx} className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-cyan-500/30 rounded-lg blur opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-              <a
-                href="#"
-                className="relative text-sm text-blue-200 font-medium px-5 py-2 bg-blue-900/40 backdrop-blur-sm border border-blue-400/30 rounded-lg hover:text-cyan-300 transition-all duration-300 group-hover:shadow-cyan-500/20"
-              >
-                {link}
-              </a>
-            </div>
-          ))}
-        </div>
-
-        {/* Right Section - Social Icons */}
-        <div className="flex items-center gap-4">
-          <span className="text-blue-200 text-sm font-medium">Follow Us:</span>
-          <div className="flex gap-2">
-            {["f", "in", "ig"].map((label, idx) => (
-              <div
-                key={idx}
-                className="group relative w-10 h-10 flex items-center justify-center rounded-full bg-blue-800/50 border border-blue-400/30 backdrop-blur-md cursor-pointer transition-all duration-300 hover:bg-blue-700/70 hover:border-cyan-400/50 hover:scale-110 hover:shadow-cyan-500/30"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <span className="relative text-blue-100 text-sm font-medium group-hover:text-cyan-300 transition-colors duration-300">
-                  {label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
+    <footer className="relative bg-gradient-to-b from-blue-950 via-indigo-950 to-blue-900 text-blue-100 py-12 px-6 lg:px-20">
       {/* Scroll to Top Button */}
       {showScrollTop && (
         <div className="fixed bottom-8 right-8 z-50 group">
@@ -100,21 +44,107 @@ const Footer = () => {
         </div>
       )}
 
-      {/* Custom Styles */}
+      {/* Top 4-column grid */}
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        {/* Column 1 - Logo + About */}
+        <div className="text-center">
+          <div className="flex justify-center mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=100&h=100&q=80"
+              alt="Company"
+              className="w-20 h-20 rounded-full object-cover border border-cyan-400 shadow-lg"
+            />
+          </div>
+          <p className="text-sm leading-relaxed max-w-xs mx-auto">
+            Al Mezoon Marbles & Granites Ind. LLC<br />
+            Premier fabricator of natural stone surfaces since 2000, serving UAE with excellence in marble, granite & quartz.
+          </p>
+        </div>
+
+        {/* Column 2 - Services */}
+        <div>
+          <h4 className="font-semibold text-blue-300 mb-4">SERVICES</h4>
+          <ul className="space-y-2 text-sm">
+            <li>Kitchen Countertops</li>
+            <li>Vanity Tops & Cladding</li>
+            <li>Material Supply</li>
+            <li>Custom Fabrication</li>
+            <li>Installation Services</li>
+          </ul>
+        </div>
+
+        {/* Column 3 - Company */}
+        <div>
+          <h4 className="font-semibold text-blue-300 mb-4">COMPANY</h4>
+          <ul className="space-y-2 text-sm">
+            <li>Home</li>
+            <li>About</li>
+            <li>Products</li>
+            <li>Clients</li>
+          </ul>
+        </div>
+
+        {/* Column 4 - Contact Info */}
+        <div>
+          <h4 className="font-semibold text-blue-300 mb-4">CONTACT</h4>
+          <ul className="space-y-4 text-sm">
+            <li className="flex items-start gap-2">
+              <MapPin size={18} className="text-cyan-300 mt-0.5" />
+              <span>
+                P.O.Box 60720,<br />Sajja Industrial Area,<br />Sharjah, UAE
+              </span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone size={18} className="text-cyan-300" />
+              +971 6 531 1778
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail size={18} className="text-cyan-300" />
+              info@almezoon-uae.com
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Social Icons */}
+      <div className="mt-10 text-center">
+        <h4 className="text-white text-sm font-semibold tracking-wider mb-4">
+          FOLLOW US
+        </h4>
+        <div className="flex justify-center gap-4">
+          {socials.map((social, idx) => (
+            <a
+              key={idx}
+              href={social.url}
+              target="_blank"
+              rel="noreferrer"
+              className={`w-9 h-9 flex items-center justify-center rounded-full ${social.color} text-white hover:scale-110 hover:opacity-90 transition-all duration-300`}
+            >
+              {social.icon}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="mt-10 border-t border-blue-500/20 pt-6 text-center text-sm text-blue-400">
+        © 2025 Al Mezoon Marbles & Granites Ind. LLC. All rights reserved.
+      </div>
+
+      {/* Custom Scroll Button Animations */}
       <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0) translateX(0); }
-          50% { transform: translateY(-15px) translateX(10px); }
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 0.6;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.9;
+            transform: scale(1.05);
+          }
         }
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.5; }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 8s ease-in-out infinite;
+        .animate-pulse {
+          animation: pulse 3s ease-in-out infinite;
         }
       `}</style>
     </footer>
