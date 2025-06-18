@@ -3,7 +3,7 @@ import { Sparkles, Award, Crown, Star, Waves, Gem, Mountain } from "lucide-react
 
 const About = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-950 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -119,11 +119,10 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Image Grid Placeholder */}
+          {/* Right Image Grid */}
           <div className="relative">
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-2xl"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-2xl"></div>
-            
             <div className="grid grid-cols-2 gap-8 relative z-10">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="group relative">

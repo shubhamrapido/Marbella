@@ -6,46 +6,41 @@ import {
   FaInstagram,
   FaFacebookF,
   FaYoutube,
-  FaLinkedinIn,
   FaWhatsapp,
-  FaCommentDots,
 } from 'react-icons/fa';
 
 const socialIcons = [
   { Icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/almezoon_2000/' },
   { Icon: FaFacebookF, label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=100063595631081' },
   { Icon: FaYoutube, label: 'YouTube', href: '#' },
-  { Icon: FaLinkedinIn, label: 'LinkedIn', href: '#' },
 ];
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 text-white overflow-hidden">
+      {/* 🔳 Visible Grid Overlay */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          backgroundColor: 'transparent',
+          backgroundImage: `
+            linear-gradient(to right, rgba(148, 163, 184, 0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(148, 163, 184, 0.15) 1px, transparent 1px)
+          `,
+          backgroundSize: '30px 30px'
+        }}
+      />
 
-      {/* Background Grid */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.3) 1px, transparent 0)`,
-            backgroundSize: '40px 40px',
-          }}
-        ></div>
+      {/* 💡 Light Beams */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-400/40 to-transparent rotate-12 animate-pulse" />
+        <div className="absolute top-0 right-1/3 w-0.5 h-full bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent -rotate-6 animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
-      {/* Light Beams */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-400/40 to-transparent rotate-12 animate-pulse"></div>
-        <div
-          className="absolute top-0 right-1/3 w-0.5 h-full bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent -rotate-6 animate-pulse"
-          style={{ animationDelay: '1s' }}
-        ></div>
-      </div>
-
-      {/* Floating Social Panel */}
+      {/* 📱 Social Icons */}
       <div className="hidden lg:flex absolute left-8 top-1/2 transform -translate-y-1/2 z-20">
         <div className="flex flex-col items-center gap-6 p-6 bg-slate-800/40 backdrop-blur-xl rounded-3xl border border-blue-500/30 shadow-2xl">
-          <div className="w-px h-16 bg-gradient-to-b from-transparent via-cyan-400/60 to-transparent"></div>
+          <div className="w-px h-16 bg-gradient-to-b from-transparent via-cyan-400/60 to-transparent" />
           {socialIcons.map(({ Icon, label, href }) => (
             <a
               key={label}
@@ -55,46 +50,34 @@ const Hero = () => {
               aria-label={label}
               className="group relative w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-slate-700/50 to-slate-800/50 backdrop-blur-sm border border-blue-400/30 hover:border-cyan-400/60 hover:bg-gradient-to-br hover:from-blue-600/30 hover:to-cyan-600/30 transition-all duration-500 hover:scale-110 hover:shadow-lg hover:shadow-cyan-400/30"
             >
-              <Icon className="text-xl text-blue-300 group-hover:text-cyan-300 group-hover:scale-110 transition-all duration-300" />
+              <Icon className="text-xl text-blue-300 group-hover:text-cyan-300 transition-all duration-300" />
             </a>
           ))}
-          <div className="w-px h-16 bg-gradient-to-b from-transparent via-blue-400/60 to-transparent"></div>
+          <div className="w-px h-16 bg-gradient-to-b from-transparent via-blue-400/60 to-transparent" />
         </div>
       </div>
 
-      {/* Right Contact Panel */}
+      {/* 💬 WhatsApp Floating Button */}
       <div className="hidden lg:flex absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
-        <div className="flex flex-col items-center gap-6">
-          <a
-            href="#"
-            aria-label="WhatsApp"
-            className="group relative bg-gradient-to-br from-emerald-500/90 to-green-600/90 backdrop-blur-sm p-4 rounded-3xl hover:scale-110 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-400/50 border border-emerald-400/40 hover:rotate-12"
-          >
-            <FaWhatsapp className="text-white text-2xl relative z-10" />
-          </a>
-          <a
-            href="#"
-            aria-label="Chat"
-            className="group relative bg-slate-800/60 backdrop-blur-xl p-4 rounded-3xl hover:scale-110 transition-all duration-500 hover:shadow-xl hover:shadow-blue-400/50 border border-blue-400/40 hover:bg-gradient-to-br hover:from-blue-600/40 hover:to-cyan-600/40"
-          >
-            <FaCommentDots className="text-blue-300 text-2xl relative z-10 group-hover:text-cyan-300 transition-colors duration-300" />
-          </a>
-        </div>
+        <a
+          href="#"
+          aria-label="WhatsApp"
+          className="group relative bg-gradient-to-br from-emerald-500/90 to-green-600/90 backdrop-blur-sm p-4 rounded-3xl hover:scale-110 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-400/50 border border-emerald-400/40 hover:rotate-12"
+        >
+          <FaWhatsapp className="text-white text-2xl relative z-10" />
+        </a>
       </div>
 
-      {/* Main Content */}
+      {/* 🧱 Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 pt-40 pb-24">
-
         {/* Badge */}
         <div className="mb-8 inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-blue-400/30 rounded-full px-6 py-3 shadow-lg">
-          <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-          <span className="text-cyan-300 text-sm font-medium">
-            Since 2000 – UAE’s Trusted Marble Experts
-          </span>
+          <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+          <span className="text-cyan-300 text-sm font-medium">Since 2000 – UAE’s Trusted Marble Experts</span>
         </div>
 
-        {/* Headline */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-10 space-y-4">
+        {/* Heading */}
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-10">
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-200 to-blue-400 drop-shadow-2xl animate-gradient-slow">
             Stone That Tells a Story
           </span>
@@ -104,26 +87,14 @@ const Hero = () => {
         </h1>
 
         {/* Description */}
-        <div className="max-w-4xl mx-auto mb-10 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-cyan-500/10 rounded-2xl blur-xl"></div>
+        <div className="max-w-4xl mx-auto mb-20 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-cyan-500/10 rounded-2xl blur-xl" />
           <p className="relative text-lg sm:text-xl md:text-2xl text-blue-100 font-medium leading-relaxed p-6 bg-slate-800/30 backdrop-blur-lg rounded-2xl border border-blue-500/20 shadow-xl">
             Al Mezoon Marbles & Granites Industries LLC is a leading UAE-based supplier, fabricator, and installer of marble, granite, quartz, and porcelain. Trusted for over 20 years to deliver timeless stone craftsmanship.
           </p>
         </div>
 
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 mb-20">
-          <button className="group relative bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-500 shadow-2xl hover:shadow-blue-400/50 hover:scale-105 border border-blue-400/40 overflow-hidden">
-            <span className="relative z-10">Explore Products</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-          </button>
-          <button className="group relative border-2 border-cyan-400/60 text-cyan-300 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-cyan-400/20 hover:text-white hover:border-cyan-300/80 transition-all duration-500 shadow-xl hover:shadow-cyan-400/50 hover:scale-105 backdrop-blur-sm overflow-hidden">
-            <span className="relative z-10">Get Quote</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/0 via-cyan-400/10 to-cyan-400/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-          </button>
-        </div>
-
-        {/* Info Cards */}
+        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl px-4">
           {[
             {
@@ -155,14 +126,12 @@ const Hero = () => {
               key={index}
               className={`group relative bg-slate-800/40 backdrop-blur-xl p-8 rounded-3xl text-center border ${card.border} hover:scale-110 transition-all duration-700 shadow-2xl hover:shadow-cyan-300/20`}
             >
-              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
               <div className="relative z-10 flex flex-col items-center mb-6">
                 <div className={`w-20 h-20 flex items-center justify-center rounded-3xl bg-slate-700/60 border-2 ${card.border} mb-4`}>
                   {card.icon}
                 </div>
-                <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
-                  {card.value}
-                </span>
+                <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">{card.value}</span>
               </div>
               <h4 className="text-xl font-bold text-white mb-3">{card.title}</h4>
               <p className="text-blue-200">{card.desc}</p>
@@ -171,7 +140,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Custom Keyframes */}
+      {/* ⬇️ Custom Keyframes */}
       <style jsx>{`
         @keyframes gradient {
           0%, 100% {
