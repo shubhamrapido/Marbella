@@ -11,7 +11,7 @@ const aboutSections = [
     stats: [
       { number: "25+", label: "Years Experience" },
       { number: "UAE", label: "Coverage" },
-      { number: "5000", label: "Since" }
+      { number: "2000", label: "Since" }
     ]
   },
   {
