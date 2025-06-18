@@ -41,20 +41,21 @@ export const clients = [
     years: "7+",
     projects: "25+"
   },
-  {
-    id: 4,
-    name: "Sai Kitchen",
-    images: [
-      "https://images.unsplash.com/photo-1617806115465-d472dfc930ec?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&h=400&fit=crop"
-    ],
-    category: "Kitchen Solutions",
-    year: "2019",
-    years: "4+",
-    projects: "18+"
-  },
+{
+  id: 4,
+  name: "Sai Kitchen",
+  images: [
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop", // ✅ Working replacement
+    "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=600&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&h=400&fit=crop"
+  ],
+  category: "Kitchen Solutions",
+  year: "2019",
+  years: "4+",
+  projects: "18+"
+},
+
   {
     id: 5,
     name: "Studio 971",

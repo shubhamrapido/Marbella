@@ -44,6 +44,19 @@ const Services = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 overflow-hidden">
+      {/* Visible Grid Overlay */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          backgroundColor: "transparent",
+          backgroundImage: `
+            linear-gradient(to right, rgba(148, 163, 184, 0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(148, 163, 184, 0.15) 1px, transparent 1px)
+          `,
+          backgroundSize: "30px 30px",
+        }}
+      />
+
       <div className="relative z-10 container mx-auto px-6 py-16">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-8 py-3 mb-8">

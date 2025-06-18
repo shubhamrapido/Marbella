@@ -2,6 +2,12 @@ import React from "react";
 import { Sparkles, Award, Crown, Star, Waves, Gem, Mountain } from "lucide-react";
 
 const About = () => {
+  const images = [
+    "https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+"https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80",  ];
+
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 overflow-hidden">
       {/* Animated Background Elements */}
@@ -15,6 +21,19 @@ const About = () => {
           <div className="absolute bottom-20 right-40 w-24 h-24 border border-cyan-400 rotate-12 animate-bounce-slow"></div>
           <div className="absolute top-1/3 right-20 w-40 h-40 border border-indigo-400 rounded-full animate-pulse"></div>
         </div>
+
+        {/* Visible Grid Overlay */}
+        <div
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{
+            backgroundColor: "transparent",
+            backgroundImage: `
+              linear-gradient(to right, rgba(148, 163, 184, 0.15) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(148, 163, 184, 0.15) 1px, transparent 1px)
+            `,
+            backgroundSize: "30px 30px",
+          }}
+        />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-20">
@@ -124,16 +143,14 @@ const About = () => {
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-2xl"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-2xl"></div>
             <div className="grid grid-cols-2 gap-8 relative z-10">
-              {[1, 2, 3, 4].map((i) => (
+              {images.map((src, i) => (
                 <div key={i} className="group relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
                   <div className="relative aspect-square rounded-3xl overflow-hidden border border-blue-500/30 shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-700">
-                    <div className="w-full h-full bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
-                      <div className="text-center">
-                        <Gem className="w-12 h-12 text-blue-400 mx-auto mb-2" />
-                        <span className="text-blue-300 text-sm">Image {i}</span>
-                      </div>
-                    </div>
+                    <img
+                      src={src}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               ))}

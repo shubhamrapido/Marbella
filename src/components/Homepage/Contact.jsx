@@ -4,11 +4,24 @@ import { Phone, Mail, MapPin } from "lucide-react";
 const ContactSection = () => {
   return (
     <section className="relative py-20 px-6 sm:px-10 lg:px-20 overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 text-white">
-      {/* Background Accent Lines */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+      {/* Background Accent Lines with Grid Overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"></div>
         <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-cyan-400/40 rounded-full animate-pulse"></div>
         <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-blue-400/40 rounded-full animate-pulse delay-1000"></div>
+        {/* Visible Grid Overlay with Maximum Visibility */}
+        <div
+          className="absolute inset-0 opacity-50"
+          style={{
+            backgroundColor: "transparent",
+            backgroundImage: `
+              linear-gradient(to right, rgba(148, 163, 184, 0.7) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(148, 163, 184, 0.7) 1px, transparent 1px)
+            `,
+            backgroundSize: "30px 30px",
+            // For debugging: Replace above rgba(148, 163, 184, 0.7) with rgba(255, 0, 0, 0.7) to make grid red if still not visible
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">

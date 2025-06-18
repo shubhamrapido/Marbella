@@ -7,21 +7,31 @@ import {
   Diamond,
   Sparkles,
 } from 'lucide-react';
-import { Link } from 'react-router-dom';          // ✅ NEW
-import { clients } from '../../data/clientData';  // adjust path if needed
+import { Link } from 'react-router-dom';
+import { clients } from '../../data/clientData';
 
 const ClientsSection = () => {
   const [hoveredClient, setHoveredClient] = useState(null);
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 overflow-hidden py-20">
-      {/* Decorative background (unchanged) */}
+      {/* Decorative background */}
       <div className="absolute inset-0">
-        {/* … background orbs / lines … */}
+        <div
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{
+            backgroundColor: "transparent",
+            backgroundImage: `
+              linear-gradient(to right, rgba(148, 163, 184, 0.15) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(148, 163, 184, 0.15) 1px, transparent 1px)
+            `,
+            backgroundSize: "30px 30px",
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-6">
-        {/* ---------- Header ---------- */}
+        {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-2 mb-8">
             <Diamond className="w-4 h-4 text-cyan-400" />
@@ -43,7 +53,7 @@ const ClientsSection = () => {
           </div>
         </div>
 
-        {/* ---------- Client Cards ---------- */}
+        {/* Client Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {clients.map((client, i) => (
             <div
@@ -52,14 +62,12 @@ const ClientsSection = () => {
               onMouseEnter={() => setHoveredClient(i)}
               onMouseLeave={() => setHoveredClient(null)}
             >
-              {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
               <div className="relative bg-slate-800/70 backdrop-blur-lg border border-blue-500/30 rounded-3xl overflow-hidden shadow-2xl group-hover:scale-105 transition-all duration-700">
-                {/* Image */}
                 <div className="relative h-56 overflow-hidden">
                   <img
-                    src={client.image}
+                    src={client.images[0]} // ✅ Use the first image from array
                     alt={client.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -74,15 +82,13 @@ const ClientsSection = () => {
                   />
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300 mb-4">
                     {client.name}
                   </h3>
 
-                  {/* ---------- Link to detail page ---------- */}
                   <Link
-                    to={`/clients/${client.id}`}      /* route = /clients/1, /clients/2, … */
+                    to={`/clients/${client.id}`}
                     className="group/btn w-full flex items-center justify-between bg-gradient-to-r from-blue-600/20 to-cyan-600/20 hover:from-blue-600 hover:to-cyan-600 text-blue-300 hover:text-white px-6 py-3 rounded-2xl border border-blue-500/30 hover:border-transparent transition-all duration-300 backdrop-blur-sm"
                   >
                     <span className="font-semibold tracking-wide uppercase">
@@ -96,12 +102,12 @@ const ClientsSection = () => {
           ))}
         </div>
 
-        {/* ---------- Stats ---------- */}
+        {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {[
             { icon: Building2, number: '6+', text: 'Partner Companies', color: 'from-blue-500 to-cyan-500' },
-            { icon: Award,     number: '50+', text: 'Projects Completed', color: 'from-cyan-500 to-blue-500' },
-            { icon: Users,     number: '100%', text: 'Client Satisfaction', color: 'from-blue-600 to-cyan-400' },
+            { icon: Award, number: '50+', text: 'Projects Completed', color: 'from-cyan-500 to-blue-500' },
+            { icon: Users, number: '100%', text: 'Client Satisfaction', color: 'from-blue-600 to-cyan-400' },
           ].map((stat, idx) => (
             <div key={idx} className="group relative">
               <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500`} />
@@ -119,12 +125,9 @@ const ClientsSection = () => {
         </div>
       </div>
 
-      {/* Keyframe animations (unchanged) */}
       <style jsx>{`
         @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes bounce-slow { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .animate-spin-slow   { animation: spin-slow 8s linear infinite; }
-        .animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
+        .animate-spin-slow { animation: spin-slow 8s linear infinite; }
       `}</style>
     </section>
   );
