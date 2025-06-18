@@ -119,11 +119,11 @@ const Services = () => {
         {/* Bottom Stats */}
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">24+</div>
+            <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">25+</div>
             <p className="text-slate-400 text-sm mt-1">Years Experience</p>
           </div>
           <div>
-            <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">2500+</div>
+            <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">5000+</div>
             <p className="text-slate-400 text-sm mt-1">Kitchens/Year</p>
           </div>
           <div>

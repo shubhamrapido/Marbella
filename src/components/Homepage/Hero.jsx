@@ -90,7 +90,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto mb-20 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-cyan-500/10 rounded-2xl blur-xl" />
           <p className="relative text-lg sm:text-xl md:text-2xl text-blue-100 font-medium leading-relaxed p-6 bg-slate-800/30 backdrop-blur-lg rounded-2xl border border-blue-500/20 shadow-xl">
-            Al Mezoon Marbles & Granites Industries LLC is a leading UAE-based supplier, fabricator, and installer of marble, granite, quartz, and porcelain. Trusted for over 20 years to deliver timeless stone craftsmanship.
+            Al Mezoon Marbles & Granites Industries LLC is a leading UAE-based supplier, fabricator, and installer of marble, granite, quartz, and porcelain. Trusted for over 25 years to deliver timeless stone craftsmanship.
           </p>
         </div>
 
@@ -98,7 +98,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl px-4">
           {[
             {
-              value: '20+',
+              value: '25+',
               title: 'Years Experience',
               desc: 'Trusted expertise in the natural stone industry',
               icon: <FaClock className="text-3xl text-cyan-400" />,
@@ -106,7 +106,7 @@ const Hero = () => {
               border: 'border-blue-400/30',
             },
             {
-              value: '2500+',
+              value: '5000+',
               title: 'Kitchens / Year',
               desc: 'Precision crafted with natural elegance',
               icon: <FaLayerGroup className="text-3xl text-indigo-400" />,

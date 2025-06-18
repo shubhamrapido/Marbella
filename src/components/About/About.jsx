@@ -9,9 +9,9 @@ const aboutSections = [
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&auto=format",
     icon: Building2,
     stats: [
-      { number: "24+", label: "Years Experience" },
+      { number: "25+", label: "Years Experience" },
       { number: "UAE", label: "Coverage" },
-      { number: "2000", label: "Since" }
+      { number: "5000", label: "Since" }
     ]
   },
   {
@@ -106,7 +106,7 @@ export default function About() {
           </h1>
           <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
             At Al Mezoon Marbles & Granites Ind. LLC, we blend tradition and technology to craft countertops that last a lifetime. 
-            Backed by 24+ years of experience, we transform homes and businesses with stonework that speaks elegance and precision.
+            Backed by 25+ years of experience, we transform homes and businesses with stonework that speaks elegance and precision.
           </p>
         </div>
 

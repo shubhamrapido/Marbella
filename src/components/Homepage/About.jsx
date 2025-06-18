@@ -112,7 +112,7 @@ const About = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <Award className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-2">20+</div>
+                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-2">25+</div>
                   <p className="text-blue-200 font-medium">Years of Excellence</p>
                 </div>
               </div>
@@ -123,7 +123,7 @@ const About = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <Star className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300 mb-2">2500+</div>
+                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300 mb-2">5000+</div>
                   <p className="text-blue-200 font-medium">Kitchens Annually</p>
                 </div>
               </div>
