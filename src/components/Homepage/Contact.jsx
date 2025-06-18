@@ -3,136 +3,195 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section className="relative py-20 px-6 sm:px-10 lg:px-20 overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 text-white">
-      {/* Background Accent Lines with Grid Overlay */}
+    <section
+      id="contact"
+      className="relative py-24 px-6 sm:px-10 lg:px-20 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white"
+    >
+      {/* Enhanced Background Effects */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"></div>
-        <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-cyan-400/40 rounded-full animate-pulse"></div>
-        <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-blue-400/40 rounded-full animate-pulse delay-1000"></div>
-        {/* Visible Grid Overlay with Maximum Visibility */}
         <div
-          className="absolute inset-0 opacity-50"
+          className="absolute inset-0 opacity-20"
           style={{
-            backgroundColor: "transparent",
             backgroundImage: `
-              linear-gradient(to right, rgba(148, 163, 184, 0.7) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(148, 163, 184, 0.7) 1px, transparent 1px)
+              linear-gradient(to right, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(59, 130, 246, 0.4) 1px, transparent 1px)
             `,
-            backgroundSize: "30px 30px",
-            // For debugging: Replace above rgba(148, 163, 184, 0.7) with rgba(255, 0, 0, 0.7) to make grid red if still not visible
+            backgroundSize: "40px 40px"
           }}
         />
+        <div className="absolute top-20 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/8 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/40 to-transparent">
+          <div className="absolute left-1/4 -top-1 w-2 h-2 bg-cyan-400/60 rounded-full animate-pulse"></div>
+          <div className="absolute right-1/3 -top-1 w-1.5 h-1.5 bg-blue-400/60 rounded-full animate-pulse delay-1000"></div>
+        </div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-cyan-300 to-blue-400 mb-6 tracking-tight">
             Contact Us
           </h2>
-          <p className="mt-4 text-blue-200 max-w-xl mx-auto text-base">
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Reach out to our marble experts for consultation or visit our showroom in Sharjah.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Form */}
-          <div className="bg-slate-800/50 border border-blue-400/20 p-8 rounded-2xl backdrop-blur-md shadow-xl relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-cyan-600/10 rounded-2xl blur-xl opacity-40 pointer-events-none"></div>
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+            <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 p-10 rounded-3xl shadow-2xl">
+              <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-8">
+                Get Free Consultation
+              </h3>
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium text-slate-300">Your Name</label>
+                    <input type="text" placeholder="Enter your name" className="form-input" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium text-slate-300">Your Email</label>
+                    <input type="email" placeholder="your.email@example.com" className="form-input" />
+                  </div>
+                </div>
 
-            <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-6">
-              Get Free Consultation
-            </h3>
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-slate-300">Phone Number</label>
+                  <input type="tel" placeholder="+971 XX XXX XXXX" className="form-input" />
+                </div>
 
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input type="text" placeholder="Your Name" className="input-field" />
-                <input type="email" placeholder="Your Email" className="input-field" />
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-slate-300">Project Type</label>
+                  <select className="form-input">
+                    <option value="">Select Project Type</option>
+                    <option value="residential">Residential Marble</option>
+                    <option value="commercial">Commercial Marble</option>
+                    <option value="renovation">Marble Renovation</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-slate-300">Project Details</label>
+                  <textarea 
+                    rows="4" 
+                    placeholder="Tell us about your marble project..." 
+                    className="form-input resize-none"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 py-4 px-6 rounded-xl text-white font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 transform hover:-translate-y-0.5"
+                >
+                  Send Message
+                </button>
               </div>
-
-              <input type="tel" placeholder="Phone Number" className="input-field" />
-
-              <select className="input-field text-blue-100">
-                <option className="bg-slate-800">Select Project Type</option>
-                <option className="bg-slate-800">Residential Marble</option>
-                <option className="bg-slate-800">Commercial Marble</option>
-                <option className="bg-slate-800">Marble Renovation</option>
-              </select>
-
-              <textarea rows="4" placeholder="Tell us about your marble project..." className="input-field resize-none"></textarea>
-
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 py-3 rounded-lg text-white font-semibold transition-all duration-300 shadow-md hover:shadow-cyan-500/30"
-              >
-                Send Message
-              </button>
-            </form>
+            </div>
           </div>
 
           {/* Contact Info + Map */}
           <div className="flex flex-col gap-8">
-            <div className="bg-slate-800/50 border border-blue-400/20 p-8 rounded-2xl backdrop-blur-md shadow-xl relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-40 pointer-events-none"></div>
+            {/* Contact Cards */}
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+              <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 p-10 rounded-3xl shadow-2xl">
+                <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-8">
+                  Get In Touch
+                </h3>
 
-              <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-6">
-                Get In Touch
-              </h3>
+                <div className="space-y-8">
+                  <div className="flex items-start gap-5 p-5 bg-slate-800/40 rounded-2xl border border-slate-700/30">
+                    <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white text-lg mb-2">Call Us</h4>
+                      <a href="tel:+97165311778" className="text-blue-300 hover:text-blue-200 font-medium text-lg transition-colors">
+                        +971 6 531 1778
+                      </a>
+                    </div>
+                  </div>
 
-              <ul className="space-y-6 text-blue-100 text-sm">
-                <li className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-blue-400 mt-1" />
-                  <span>
-                    <strong>Call Us:</strong><br /> +971 6 531 1778
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-blue-400 mt-1" />
-                  <span>
-                    <strong>Email:</strong><br /> info@almezoon-uae.com
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-blue-400 mt-1" />
-                  <span>
-                    <strong>Visit Us:</strong><br /> Al Sajja Industrial Area, Sharjah, UAE
-                  </span>
-                </li>
-              </ul>
+                  <div className="flex items-start gap-5 p-5 bg-slate-800/40 rounded-2xl border border-slate-700/30">
+                    <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white text-lg mb-2">Email Us</h4>
+                      <a href="mailto:info@almezoon-uae.com" className="text-cyan-300 hover:text-cyan-200 font-medium transition-colors break-all">
+                        info@almezoon-uae.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-5 p-5 bg-slate-800/40 rounded-2xl border border-slate-700/30">
+                    <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white text-lg mb-2">Visit Our Showroom</h4>
+                      <p className="text-green-300 font-medium">
+                        Al Sajja Industrial Area<br />
+                        Sharjah, UAE
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="relative w-full h-56 rounded-2xl overflow-hidden border border-blue-400/20 shadow-md">
-              <iframe
-                title="Al Mezoon Location"
-                src="https://www.google.com/maps?q=Al+Mezoon+Marbles,+Al+Sajja+Industrial+Area,+Sharjah,+UAE&output=embed"
-                className="w-full h-full border-0"
-                loading="lazy"
-              ></iframe>
+            {/* Map */}
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+              <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl overflow-hidden shadow-2xl">
+                <div className="p-6 border-b border-slate-700/50">
+                  <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                    <MapPin className="w-7 h-7 text-blue-400" />
+                    Our Location
+                  </h3>
+                </div>
+                <div className="h-72">
+                  <iframe
+                    title="Al Mezoon Location"
+                    src="https://www.google.com/maps?q=Al+Mezoon+Marbles,+Al+Sajja+Industrial+Area,+Sharjah,+UAE&output=embed"
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Form Input Styling */}
       <style jsx>{`
-        .input-field {
+        .form-input {
           width: 100%;
-          padding: 0.75rem 1rem;
-          border-radius: 0.5rem;
-          background: rgba(30, 41, 59, 0.6);
-          border: 1px solid rgba(96, 165, 250, 0.2);
-          color: #dbeafe;
+          padding: 1rem 1.25rem;
+          border-radius: 0.75rem;
+          background: rgba(15, 23, 42, 0.8);
+          border: 1px solid rgba(71, 85, 105, 0.5);
+          color: #f1f5f9;
           outline: none;
-          font-size: 0.875rem;
+          font-size: 1rem;
           transition: all 0.3s ease;
+          backdrop-filter: blur(8px);
         }
-        .input-field::placeholder {
-          color: #93c5fd;
-          opacity: 0.6;
+        .form-input::placeholder {
+          color: #94a3b8;
+          opacity: 0.7;
         }
-        .input-field:focus {
-          border-color: #22d3ee;
-          box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.2);
+        .form-input:focus {
+          border-color: #06b6d4;
+          box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+          background: rgba(15, 23, 42, 0.9);
+        }
+        select.form-input option {
+          background: #0f172a;
+          color: #f1f5f9;
         }
       `}</style>
     </section>

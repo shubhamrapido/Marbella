@@ -14,18 +14,21 @@ const ClientsSection = () => {
   const [hoveredClient, setHoveredClient] = useState(null);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 overflow-hidden py-20">
+    <section
+      id="client" // ✅ Important for HashLink to work
+      className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 overflow-hidden py-20"
+    >
       {/* Decorative background */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
-            backgroundColor: "transparent",
+            backgroundColor: 'transparent',
             backgroundImage: `
               linear-gradient(to right, rgba(148, 163, 184, 0.15) 1px, transparent 1px),
               linear-gradient(to bottom, rgba(148, 163, 184, 0.15) 1px, transparent 1px)
             `,
-            backgroundSize: "30px 30px",
+            backgroundSize: '30px 30px',
           }}
         />
       </div>
@@ -67,7 +70,7 @@ const ClientsSection = () => {
               <div className="relative bg-slate-800/70 backdrop-blur-lg border border-blue-500/30 rounded-3xl overflow-hidden shadow-2xl group-hover:scale-105 transition-all duration-700">
                 <div className="relative h-56 overflow-hidden">
                   <img
-                    src={client.images[0]} // ✅ Use the first image from array
+                    src={client.images[0]}
                     alt={client.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -110,7 +113,9 @@ const ClientsSection = () => {
             { icon: Users, number: '100%', text: 'Client Satisfaction', color: 'from-blue-600 to-cyan-400' },
           ].map((stat, idx) => (
             <div key={idx} className="group relative">
-              <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500`} />
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500`}
+              />
               <div className="relative bg-slate-800/80 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
                 <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
                   <stat.icon className="w-8 h-8 text-white" />
@@ -126,8 +131,17 @@ const ClientsSection = () => {
       </div>
 
       <style jsx>{`
-        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .animate-spin-slow { animation: spin-slow 8s linear infinite; }
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
       `}</style>
     </section>
   );
