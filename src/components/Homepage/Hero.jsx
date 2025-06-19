@@ -10,10 +10,10 @@ import {
 } from 'react-icons/fa';
 
 // Import carousel images
-import HomepageTop1 from '../../assets/Images/homepage_top_1.jpg';
-import HomepageTop2 from '../../assets/Images/homepage_top_2.jpg';
-import HomepageTop3 from '../../assets/Images/homepage_top_3.jpg';
-import HomepageTop4 from '../../assets/Images/homepage_top_4.jpg';
+import HomepageTop1 from '../../assets/Images/homepage_top_1.webp';
+import HomepageTop2 from '../../assets/Images/homepage_top_2.webp';
+import HomepageTop3 from '../../assets/Images/homepage_top_3.webp';
+import HomepageTop4 from '../../assets/Images/homepage_top_4.webp';
 
 const socialIcons = [
   { Icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/almezoon_2000/' },

@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { clients } from '../../data/clientData';
 
 // Import background image
-import PremiumMaterial1 from '../../assets/Images/premium_material_1.jpg';
+import PremiumMaterial1 from '../../assets/Images/premium_material_1.webp';
 
 const ClientsSection = () => {
   const [hoveredClient, setHoveredClient] = useState(null);

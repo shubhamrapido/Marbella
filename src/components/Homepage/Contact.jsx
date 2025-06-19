@@ -2,7 +2,7 @@ import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 // Import background image
-import PremiumMaterial2 from '../../assets/Images/premium_material_2.jpg';
+import PremiumMaterial2 from '../../assets/Images/premium_material_2.webp';
 
 const ContactSection = () => {
   return (
