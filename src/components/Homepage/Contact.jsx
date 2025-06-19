@@ -1,16 +1,31 @@
 import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 
+// Import background image
+import About4 from '../../assets/Images/About4.jpg';
+
 const ContactSection = () => {
   return (
     <section
       id="contact"
       className="relative py-24 px-6 sm:px-10 lg:px-20 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white"
     >
+      {/* Fixed Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={About4}
+          alt="Contact background"
+          className="w-full h-full object-cover"
+        />
+        {/* Enhanced overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 via-slate-900/30 to-blue-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/25" />
+      </div>
+
       {/* Enhanced Background Effects */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-1 pointer-events-none">
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-10"
           style={{
             backgroundImage: `
               linear-gradient(to right, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
@@ -41,7 +56,7 @@ const ContactSection = () => {
           {/* Form */}
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-            <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 p-10 rounded-3xl shadow-2xl">
+            <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 p-10 rounded-3xl shadow-2xl">
               <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-8">
                 Get Free Consultation
               </h3>
@@ -96,13 +111,13 @@ const ContactSection = () => {
             {/* Contact Cards */}
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-              <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 p-10 rounded-3xl shadow-2xl">
+              <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 p-10 rounded-3xl shadow-2xl">
                 <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-8">
                   Get In Touch
                 </h3>
 
                 <div className="space-y-8">
-                  <div className="flex items-start gap-5 p-5 bg-slate-800/40 rounded-2xl border border-slate-700/30">
+                  <div className="flex items-start gap-5 p-5 bg-slate-800/60 rounded-2xl border border-slate-700/30">
                     <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-blue-400" />
                     </div>
@@ -114,7 +129,7 @@ const ContactSection = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-5 p-5 bg-slate-800/40 rounded-2xl border border-slate-700/30">
+                  <div className="flex items-start gap-5 p-5 bg-slate-800/60 rounded-2xl border border-slate-700/30">
                     <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-cyan-400" />
                     </div>
@@ -126,7 +141,7 @@ const ContactSection = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-5 p-5 bg-slate-800/40 rounded-2xl border border-slate-700/30">
+                  <div className="flex items-start gap-5 p-5 bg-slate-800/60 rounded-2xl border border-slate-700/30">
                     <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-green-400" />
                     </div>
@@ -145,7 +160,7 @@ const ContactSection = () => {
             {/* Map */}
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-              <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl overflow-hidden shadow-2xl">
                 <div className="p-6 border-b border-slate-700/50">
                   <h3 className="text-2xl font-bold text-white flex items-center gap-3">
                     <MapPin className="w-7 h-7 text-blue-400" />

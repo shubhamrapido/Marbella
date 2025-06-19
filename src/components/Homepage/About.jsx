@@ -25,8 +25,20 @@ const About = () => {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 overflow-hidden">
+      {/* Fixed Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={About1}
+          alt="About background"
+          className="w-full h-full object-cover"
+        />
+        {/* Enhanced overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 via-blue-950/30 to-indigo-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/25" />
+      </div>
+
       {/* Animated Background Elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-1">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-indigo-400/10 rounded-full blur-3xl animate-pulse delay-500"></div>
@@ -43,8 +55,8 @@ const About = () => {
           style={{
             backgroundColor: "transparent",
             backgroundImage: `
-              linear-gradient(to right, rgba(148, 163, 184, 0.15) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(148, 163, 184, 0.15) 1px, transparent 1px)
+              linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px)
             `,
             backgroundSize: "30px 30px",
           }}
@@ -54,7 +66,7 @@ const About = () => {
       <div className="relative z-10 container mx-auto px-6 py-20">
         {/* Header Section */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-2 mb-8">
+          <div className="inline-flex items-center gap-2 bg-blue-500/30 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-2 mb-8">
             <Gem className="w-4 h-4 text-cyan-400" />
             <span className="text-cyan-300 text-sm font-medium">
               Leading Kitchen Countertop Fabricator in UAE Since 2000
@@ -72,7 +84,7 @@ const About = () => {
 
           <div className="max-w-4xl mx-auto relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-500/20 rounded-2xl blur-xl"></div>
-            <p className="relative text-blue-100 text-xl leading-relaxed p-8 bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-blue-500/20 shadow-2xl">
+            <p className="relative text-blue-100 text-xl leading-relaxed p-8 bg-slate-800/70 backdrop-blur-lg rounded-2xl border border-blue-500/20 shadow-2xl">
               Al Mezoon Marbles & Granites Industries LLC has been a leading kitchen countertop fabricator in the UAE since 2000. 
               We are a team of professionals with deep expertise in marble, granite, quartz, and porcelain — specializing in supply, 
               fabrication, and installation across the region.
@@ -95,7 +107,7 @@ const About = () => {
             <div className="space-y-6">
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
-                <div className="relative bg-slate-800/70 backdrop-blur-lg border border-blue-500/30 rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-500 shadow-xl">
+                <div className="relative bg-slate-800/80 backdrop-blur-lg border border-blue-500/30 rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-500 shadow-xl">
                   <div className="absolute top-4 right-4">
                     <Mountain className="w-6 h-6 text-cyan-400 opacity-50" />
                   </div>
@@ -108,7 +120,7 @@ const About = () => {
 
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
-                <div className="relative bg-slate-800/70 backdrop-blur-lg border border-cyan-500/30 rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-500 shadow-xl">
+                <div className="relative bg-slate-800/80 backdrop-blur-lg border border-cyan-500/30 rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-500 shadow-xl">
                   <div className="absolute top-4 right-4">
                     <Waves className="w-6 h-6 text-blue-400 opacity-50" />
                   </div>
@@ -123,7 +135,7 @@ const About = () => {
             <div className="grid grid-cols-2 gap-6 mt-12">
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
-                <div className="relative bg-slate-800/80 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:transform group-hover:scale-110 transition-all duration-500">
+                <div className="relative bg-slate-800/90 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:transform group-hover:scale-110 transition-all duration-500">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <Award className="w-8 h-8 text-white" />
                   </div>
@@ -134,7 +146,7 @@ const About = () => {
 
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
-                <div className="relative bg-slate-800/80 backdrop-blur-lg border border-cyan-400/40 rounded-3xl p-8 text-center group-hover:transform group-hover:scale-110 transition-all duration-500">
+                <div className="relative bg-slate-800/90 backdrop-blur-lg border border-cyan-400/40 rounded-3xl p-8 text-center group-hover:transform group-hover:scale-110 transition-all duration-500">
                   <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <Star className="w-8 h-8 text-white" />
                   </div>

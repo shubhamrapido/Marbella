@@ -3,6 +3,9 @@ import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { HashLink } from "react-router-hash-link";
 
+// Import background image
+import Quartzite from '../../assets/Images/quartzite.jpg';
+
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -23,8 +26,20 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-white px-6 py-10 overflow-hidden">
+      {/* Fixed Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={Quartzite}
+          alt="Footer background"
+          className="w-full h-full object-cover"
+        />
+        {/* Enhanced overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-slate-900/30 to-gray-800/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 via-transparent to-gray-900/25" />
+      </div>
+
       {/* Hexagon Background */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
+      <div className="absolute inset-0 opacity-5 pointer-events-none z-1">
         <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
           <defs>
             <pattern id="hexagons" x="0" y="0" width="120" height="104" patternUnits="userSpaceOnUse">
@@ -124,7 +139,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+      <div className="relative z-10 mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
         © 2025 <span className="text-white font-medium">Al Mezoon Marbles & Granites Ind. LLC</span>. All rights reserved.
       </div>
     </footer>

@@ -10,6 +10,9 @@ import {
 import { Link } from 'react-router-dom';
 import { clients } from '../../data/clientData';
 
+// Import background image
+import Marble from '../../assets/Images/marble.jpg';
+
 const ClientsSection = () => {
   const [hoveredClient, setHoveredClient] = useState(null);
 
@@ -18,15 +21,27 @@ const ClientsSection = () => {
       id="client" // ✅ Important for HashLink to work
       className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 overflow-hidden py-20"
     >
+      {/* Fixed Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={Marble}
+          alt="Clients background"
+          className="w-full h-full object-cover"
+        />
+        {/* Enhanced overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 via-blue-950/30 to-indigo-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/25" />
+      </div>
+
       {/* Decorative background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-1">
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
             backgroundColor: 'transparent',
             backgroundImage: `
-              linear-gradient(to right, rgba(148, 163, 184, 0.15) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(148, 163, 184, 0.15) 1px, transparent 1px)
+              linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px)
             `,
             backgroundSize: '30px 30px',
           }}
@@ -36,7 +51,7 @@ const ClientsSection = () => {
       <div className="relative z-10 max-w-[1200px] mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-2 mb-8">
+          <div className="inline-flex items-center gap-2 bg-blue-500/30 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-2 mb-8">
             <Diamond className="w-4 h-4 text-cyan-400" />
             <span className="text-cyan-300 text-sm font-medium">Trusted Partners</span>
           </div>
@@ -50,7 +65,7 @@ const ClientsSection = () => {
           </h2>
           <div className="max-w-3xl mx-auto relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-500/20 rounded-2xl blur-xl"></div>
-            <p className="relative text-blue-100 text-lg leading-relaxed p-6 bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-blue-500/30 shadow-2xl">
+            <p className="relative text-blue-100 text-lg leading-relaxed p-6 bg-slate-800/70 backdrop-blur-lg rounded-2xl border border-blue-500/30 shadow-2xl">
               We partner with industry leaders to deliver exceptional stone solutions across diverse sectors and premium projects.
             </p>
           </div>
@@ -67,7 +82,7 @@ const ClientsSection = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
-              <div className="relative bg-slate-800/70 backdrop-blur-lg border border-blue-500/30 rounded-3xl overflow-hidden shadow-2xl group-hover:scale-105 transition-all duration-700">
+              <div className="relative bg-slate-800/80 backdrop-blur-lg border border-blue-500/30 rounded-3xl overflow-hidden shadow-2xl group-hover:scale-105 transition-all duration-700">
                 <div className="relative h-56 overflow-hidden">
                   <img
                     src={client.images[0]}
@@ -116,7 +131,7 @@ const ClientsSection = () => {
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500`}
               />
-              <div className="relative bg-slate-800/80 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
+              <div className="relative bg-slate-800/90 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
                 <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
                   <stat.icon className="w-8 h-8 text-white" />
                 </div>

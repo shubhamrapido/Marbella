@@ -18,6 +18,7 @@ import Product6 from '../../assets/Images/Product_6.webp';
 import About1 from '../../assets/Images/About1.jpg';
 import About2 from '../../assets/Images/About2.jpg';
 import About3 from '../../assets/Images/About3.jpg';
+import Granite from '../../assets/Images/granite.jpg';
 
 const services = [
   {
@@ -58,14 +59,26 @@ const Services = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 overflow-hidden">
+      {/* Fixed Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={Granite}
+          alt="Services background"
+          className="w-full h-full object-cover"
+        />
+        {/* Enhanced overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/40 via-blue-950/30 to-indigo-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-slate-900/25" />
+      </div>
+
       {/* Visible Grid Overlay */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="absolute inset-0 z-1 pointer-events-none"
         style={{
           backgroundColor: "transparent",
           backgroundImage: `
-            linear-gradient(to right, rgba(148, 163, 184, 0.15) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(148, 163, 184, 0.15) 1px, transparent 1px)
+            linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px)
           `,
           backgroundSize: "30px 30px",
         }}
@@ -73,7 +86,7 @@ const Services = () => {
 
       <div className="relative z-10 container mx-auto px-6 py-16">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-8 py-3 mb-8">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 backdrop-blur-sm border border-blue-400/30 rounded-full px-8 py-3 mb-8">
             <Sparkles className="w-5 h-5 text-cyan-400 animate-spin-slow" />
             <span className="text-cyan-300 font-semibold tracking-wide">
               CORE SERVICES
@@ -92,7 +105,7 @@ const Services = () => {
             <div key={service.id} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
               {/* Service Info */}
               <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="group relative bg-slate-800/60 backdrop-blur-lg border border-blue-500/30 rounded-3xl p-8 shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 hover:scale-105">
+                <div className="group relative bg-slate-800/80 backdrop-blur-lg border border-blue-500/30 rounded-3xl p-8 shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 hover:scale-105">
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}
                   ></div>
@@ -176,7 +189,7 @@ const Services = () => {
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
-            <div className="relative bg-slate-800/80 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
+            <div className="relative bg-slate-800/90 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <HardHat className="w-8 h-8 text-white" />
               </div>
@@ -187,7 +200,7 @@ const Services = () => {
 
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
-            <div className="relative bg-slate-800/80 backdrop-blur-lg border border-cyan-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
+            <div className="relative bg-slate-800/90 backdrop-blur-lg border border-cyan-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
               <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Layers3 className="w-8 h-8 text-white" />
               </div>
@@ -198,7 +211,7 @@ const Services = () => {
 
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-400 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
-            <div className="relative bg-slate-800/80 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
+            <div className="relative bg-slate-800/90 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Truck className="w-8 h-8 text-white" />
               </div>
