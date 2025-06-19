@@ -1,12 +1,27 @@
 import React from "react";
 import { Sparkles, Award, Crown, Star, Waves, Gem, Mountain } from "lucide-react";
 
+// Import company images
+import About1 from '../../assets/Images/About1.jpg';
+import About2 from '../../assets/Images/About2.jpg';
+import About3 from '../../assets/Images/About3.jpg';
+import About4 from '../../assets/Images/About4.jpg';
+import Product1 from '../../assets/Images/Product_1.webp';
+import Product2 from '../../assets/Images/Product_2.webp';
+import Product3 from '../../assets/Images/Product_3.webp';
+import Product4 from '../../assets/Images/Product_4.webp';
+import Marble from '../../assets/Images/marble.jpg';
+import Granite from '../../assets/Images/granite.jpg';
+
 const About = () => {
-  const images = [
-    "https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-"https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80",  ];
+  // Main showcase images
+  const mainImages = [About1, About2, About3, About4];
+  
+  // Additional work showcase images
+  const workShowcase = [Product1, Product2, Product3, Product4];
+  
+  // Material showcase
+  const materialImages = [Marble, Granite];
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 overflow-hidden">
@@ -57,7 +72,7 @@ const About = () => {
 
           <div className="max-w-4xl mx-auto relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-500/20 rounded-2xl blur-xl"></div>
-            <p className="relative text-blue-100 text-xl leading-relaxed p-8 bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-blue-500/30 shadow-2xl">
+            <p className="relative text-blue-100 text-xl leading-relaxed p-8 bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-blue-500/20 shadow-2xl">
               Al Mezoon Marbles & Granites Industries LLC has been a leading kitchen countertop fabricator in the UAE since 2000. 
               We are a team of professionals with deep expertise in marble, granite, quartz, and porcelain — specializing in supply, 
               fabrication, and installation across the region.
@@ -65,8 +80,8 @@ const About = () => {
           </div>
         </div>
 
-        {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        {/* Main Content with Enhanced Images */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
           <div className="space-y-10">
             <div className="flex items-center gap-4 mb-8">
               <div className="p-3 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl shadow-lg">
@@ -86,7 +101,7 @@ const About = () => {
                   </div>
                   <p className="text-blue-100 leading-relaxed text-lg">
                     Founded in 2000, Al Mezoon began with a small team and has grown into a trusted name with over two decades 
-                    of experience. Today, we’re known for premium-quality stones and exceptional craftsmanship across the UAE.
+                    of experience. Today, we're known for premium-quality stones and exceptional craftsmanship across the UAE.
                   </p>
                 </div>
               </div>
@@ -128,33 +143,104 @@ const About = () => {
                 </div>
               </div>
             </div>
-
-            <div className="relative inline-block group mt-12">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 rounded-2xl blur-lg opacity-70 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
-              <button className="relative bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-10 py-5 rounded-2xl font-bold shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3 group">
-                <span className="text-lg">Explore Our Journey</span>
-                <Sparkles className="w-6 h-6 group-hover:animate-spin" />
-              </button>
-            </div>
           </div>
 
-          {/* Right Image Grid */}
+          {/* Right Main Image Grid */}
           <div className="relative">
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-2xl"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-2xl"></div>
             <div className="grid grid-cols-2 gap-8 relative z-10">
-              {images.map((src, i) => (
+              {mainImages.map((src, i) => (
                 <div key={i} className="group relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
                   <div className="relative aspect-square rounded-3xl overflow-hidden border border-blue-500/30 shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-700">
                     <img
                       src={src}
-                      className="w-full h-full object-cover"
+                      alt={`Company showcase ${i + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* New Work Showcase Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-4">
+              Our Premium Work
+            </h3>
+            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
+              Showcasing our finest marble and granite installations across luxury projects in the UAE
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {workShowcase.map((src, i) => (
+              <div key={i} className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-blue-500/20 shadow-xl group-hover:shadow-cyan-500/20 transition-all duration-500">
+                  <img
+                    src={src}
+                    alt={`Premium work ${i + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <span className="text-cyan-300 text-xs font-medium">Premium Installation</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Material Showcase Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300 mb-4">
+              Premium Materials
+            </h3>
+            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
+              We work with the finest natural stones from around the world
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {materialImages.map((src, i) => (
+              <div key={i} className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+                <div className="relative aspect-[3/2] rounded-3xl overflow-hidden border border-blue-500/30 shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-700">
+                  <img
+                    src={src}
+                    alt={`Premium material ${i + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6">
+                    <div className="bg-slate-900/80 backdrop-blur-sm px-4 py-2 rounded-xl border border-blue-500/30">
+                      <span className="text-cyan-300 text-sm font-semibold">
+                        {i === 0 ? 'Premium Marble Collection' : 'Luxury Granite Selection'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center">
+          <div className="relative inline-block group">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 rounded-2xl blur-lg opacity-70 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+            <button className="relative bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-10 py-5 rounded-2xl font-bold shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3 group">
+              <span className="text-lg">Explore Our Journey</span>
+              <Sparkles className="w-6 h-6 group-hover:animate-spin" />
+            </button>
           </div>
         </div>
       </div>

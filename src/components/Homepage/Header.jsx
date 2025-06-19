@@ -18,6 +18,7 @@ const Header = () => {
     { name: 'Home', to: '/' },
     { name: 'About', to: '/about' },
     { name: 'Services', to: '/services' },
+    { name: 'Products', to: '/products' },
     { name: 'Clients', to: '/#client' },
   ];
 

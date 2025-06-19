@@ -8,14 +8,26 @@ import {
   ArrowRight
 } from "lucide-react";
 
+// Import service showcase images
+import Product1 from '../../assets/Images/Product_1.webp';
+import Product2 from '../../assets/Images/Product_2.webp';
+import Product3 from '../../assets/Images/Product_3.webp';
+import Product4 from '../../assets/Images/Product_4.webp';
+import Product5 from '../../assets/Images/Product_5.webp';
+import Product6 from '../../assets/Images/Product_6.webp';
+import About1 from '../../assets/Images/About1.jpg';
+import About2 from '../../assets/Images/About2.jpg';
+import About3 from '../../assets/Images/About3.jpg';
+
 const services = [
   {
     id: 1,
     name: "Fabrication",
     description:
       "Custom cutting and shaping of stones with high-precision finishes, including kitchen countertops, vanity tops, and wall cladding.",
-    icon: <HardHat className="w-12 h-12 text-cyan-400" />, // Fabrication icon
+    icon: <HardHat className="w-12 h-12 text-cyan-400" />,
     color: "from-blue-500 to-cyan-400",
+    images: [Product1, Product2, Product3], // Fabrication showcase
   },
   {
     id: 2,
@@ -24,6 +36,7 @@ const services = [
       "On-site expert installation of marble, granite, quartz, and porcelain with full project management for perfect finish.",
     icon: <Layers3 className="w-12 h-12 text-indigo-400" />,
     color: "from-indigo-500 to-blue-400",
+    images: [About1, About2, About3], // Installation showcase
   },
   {
     id: 3,
@@ -32,6 +45,7 @@ const services = [
       "Premium stones sourced from top global quarries, including marble, granite, quartz, and porcelain in bulk quantities.",
     icon: <Truck className="w-12 h-12 text-blue-400" />,
     color: "from-cyan-500 to-blue-500",
+    images: [Product4, Product5, Product6], // Material showcase
   },
 ];
 
@@ -72,30 +86,126 @@ const Services = () => {
           </h2>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="group relative bg-slate-800/60 backdrop-blur-lg border border-blue-500/30 rounded-3xl p-8 shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 hover:scale-105"
-            >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}
-              ></div>
+        {/* Enhanced Services Grid with Images */}
+        <div className="space-y-20">
+          {services.map((service, index) => (
+            <div key={service.id} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+              {/* Service Info */}
+              <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                <div className="group relative bg-slate-800/60 backdrop-blur-lg border border-blue-500/30 rounded-3xl p-8 shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 hover:scale-105">
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}
+                  ></div>
 
-              <div className="relative z-10 flex flex-col gap-4 text-center items-center">
-                <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-slate-700/60 border border-blue-400/30">
-                  {service.icon}
+                  <div className="relative z-10 space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-slate-700/60 border border-blue-400/30">
+                        {service.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
+                          {service.name}
+                        </h3>
+                        <div className={`w-16 h-1 bg-gradient-to-r ${service.color} rounded-full mt-2`}></div>
+                      </div>
+                    </div>
+                    <p className="text-blue-200 text-lg leading-relaxed">
+                      {service.description}
+                    </p>
+                    
+                    {/* Service Features */}
+                    <div className="flex flex-wrap gap-2">
+                      {service.name === 'Fabrication' && 
+                        ['Custom Cutting', 'Precision Finish', 'Quality Control'].map((feature, i) => (
+                          <span key={i} className="px-3 py-1 bg-blue-500/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
+                            {feature}
+                          </span>
+                        ))
+                      }
+                      {service.name === 'Installation' && 
+                        ['Expert Team', 'Project Management', 'Perfect Finish'].map((feature, i) => (
+                          <span key={i} className="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-sm rounded-full border border-indigo-500/30">
+                            {feature}
+                          </span>
+                        ))
+                      }
+                      {service.name === 'Material Supply' && 
+                        ['Global Sourcing', 'Premium Quality', 'Bulk Supply'].map((feature, i) => (
+                          <span key={i} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-sm rounded-full border border-cyan-500/30">
+                            {feature}
+                          </span>
+                        ))
+                      }
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
-                  {service.name}
-                </h3>
-                <p className="text-blue-200 text-sm leading-relaxed">
-                  {service.description}
-                </p>
+              </div>
+
+              {/* Service Images */}
+              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className="grid grid-cols-2 gap-4">
+                  {service.images.slice(0, 3).map((imageSrc, imgIndex) => (
+                    <div key={imgIndex} className={`group relative ${imgIndex === 0 ? 'col-span-2' : ''}`}>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-all duration-500`}></div>
+                      <div className={`relative ${imgIndex === 0 ? 'aspect-[2/1]' : 'aspect-square'} rounded-2xl overflow-hidden border border-blue-500/30 shadow-xl group-hover:shadow-cyan-500/20 transition-all duration-500`}>
+                        <img
+                          src={imageSrc}
+                          alt={`${service.name} showcase ${imgIndex + 1}`}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
+                        <div className="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm px-3 py-1 rounded-full">
+                          <span className={`text-xs font-medium ${
+                            service.name === 'Fabrication' ? 'text-cyan-300' :
+                            service.name === 'Installation' ? 'text-indigo-300' :
+                            'text-blue-300'
+                          }`}>
+                            {service.name}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Stats Section */}
+        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="group relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
+            <div className="relative bg-slate-800/80 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <HardHat className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-2">1800</div>
+              <p className="text-blue-200 font-medium">SqM Facility</p>
+            </div>
+          </div>
+
+          <div className="group relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
+            <div className="relative bg-slate-800/80 backdrop-blur-lg border border-cyan-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
+              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Layers3 className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300 mb-2">5000+</div>
+              <p className="text-blue-200 font-medium">Projects Annually</p>
+            </div>
+          </div>
+
+          <div className="group relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-400 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
+            <div className="relative bg-slate-800/80 backdrop-blur-lg border border-blue-400/40 rounded-3xl p-8 text-center group-hover:scale-110 transition-all duration-500">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Truck className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mb-2">25+</div>
+              <p className="text-blue-200 font-medium">Years Experience</p>
+            </div>
+          </div>
         </div>
 
         {/* CTA Button */}

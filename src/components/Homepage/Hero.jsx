@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FaMapMarkerAlt,
   FaLayerGroup,
@@ -9,37 +9,118 @@ import {
   FaWhatsapp,
 } from 'react-icons/fa';
 
+// Import carousel images
+import About1 from '../../assets/Images/About1.jpg';
+import About2 from '../../assets/Images/About2.jpg';
+import About3 from '../../assets/Images/About3.jpg';
+import About4 from '../../assets/Images/About4.jpg';
+
 const socialIcons = [
   { Icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/almezoon_2000/' },
   { Icon: FaFacebookF, label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=100063595631081' },
   { Icon: FaYoutube, label: 'YouTube', href: '#' },
 ];
 
+// Carousel images array
+const carouselImages = [
+  {
+    src: About1,
+    title: "Premium Stone Craftsmanship",
+    description: "Luxury marble installations for elite projects"
+  },
+  {
+    src: About2,
+    title: "Expert Fabrication",
+    description: "State-of-the-art manufacturing facility"
+  },
+  {
+    src: About3,
+    title: "Professional Installation",
+    description: "Precision fitting by skilled craftsmen"
+  },
+  {
+    src: About4,
+    title: "Quality Assurance",
+    description: "25+ years of excellence in UAE"
+  }
+];
+
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => 
+        prevSlide === carouselImages.length - 1 ? 0 : prevSlide + 1
+      );
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 text-white overflow-hidden">
+      {/* 🎠 Background Carousel */}
+      <div className="absolute inset-0 z-0">
+        {carouselImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img
+              src={image.src}
+              alt={image.title}
+              className="w-full h-full object-cover"
+            />
+            {/* Even lighter gradient overlay for maximum image visibility */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 via-blue-950/30 to-indigo-950/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/25" />
+          </div>
+        ))}
+      </div>
+
       {/* 🔳 Visible Grid Overlay */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="absolute inset-0 z-1 pointer-events-none"
         style={{
           backgroundColor: 'transparent',
           backgroundImage: `
-            linear-gradient(to right, rgba(148, 163, 184, 0.15) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(148, 163, 184, 0.15) 1px, transparent 1px)
+            linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px)
           `,
           backgroundSize: '30px 30px'
         }}
       />
 
+      {/* 🎯 Carousel Indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+        {carouselImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? 'bg-cyan-400 scale-125 shadow-lg shadow-cyan-400/50'
+                : 'bg-white/40 hover:bg-white/60'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      
       {/* 💡 Light Beams */}
-      <div className="absolute inset-0 overflow-hidden z-0">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-400/40 to-transparent rotate-12 animate-pulse" />
-        <div className="absolute top-0 right-1/3 w-0.5 h-full bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent -rotate-6 animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute inset-0 overflow-hidden z-1">
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-400/30 to-transparent rotate-12 animate-pulse" />
+        <div className="absolute top-0 right-1/3 w-0.5 h-full bg-gradient-to-b from-transparent via-cyan-400/20 to-transparent -rotate-6 animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       {/* 📱 Social Icons */}
       <div className="hidden lg:flex absolute left-8 top-1/2 transform -translate-y-1/2 z-20">
-        <div className="flex flex-col items-center gap-6 p-6 bg-slate-800/40 backdrop-blur-xl rounded-3xl border border-blue-500/30 shadow-2xl">
+        <div className="flex flex-col items-center gap-6 p-6 bg-slate-800/50 backdrop-blur-xl rounded-3xl border border-blue-500/30 shadow-2xl">
           <div className="w-px h-16 bg-gradient-to-b from-transparent via-cyan-400/60 to-transparent" />
           {socialIcons.map(({ Icon, label, href }) => (
             <a
@@ -58,7 +139,7 @@ const Hero = () => {
       </div>
 
       {/* 💬 WhatsApp Floating Button */}
-      <div className="hidden lg:flex absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
+      <div className="hidden lg:flex absolute right-8 bottom-32 z-20">
         <a
           href="#"
           aria-label="WhatsApp"
@@ -71,9 +152,9 @@ const Hero = () => {
       {/* 🧱 Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 pt-40 pb-24">
         {/* Badge */}
-        <div className="mb-8 inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-blue-400/30 rounded-full px-6 py-3 shadow-lg">
+        <div className="mb-8 inline-flex items-center gap-2 bg-slate-800/80 backdrop-blur-xl border border-blue-400/30 rounded-full px-6 py-3 shadow-lg">
           <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-          <span className="text-cyan-300 text-sm font-medium">Since 2000 – UAE’s Trusted Marble Experts</span>
+          <span className="text-cyan-300 text-sm font-medium">Since 2000 – UAE's Trusted Marble Experts</span>
         </div>
 
         {/* Heading */}
@@ -89,7 +170,7 @@ const Hero = () => {
         {/* Description */}
         <div className="max-w-4xl mx-auto mb-20 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-cyan-500/10 rounded-2xl blur-xl" />
-          <p className="relative text-lg sm:text-xl md:text-2xl text-blue-100 font-medium leading-relaxed p-6 bg-slate-800/30 backdrop-blur-lg rounded-2xl border border-blue-500/20 shadow-xl">
+          <p className="relative text-lg sm:text-xl md:text-2xl text-blue-100 font-medium leading-relaxed p-6 bg-slate-800/70 backdrop-blur-lg rounded-2xl border border-blue-500/20 shadow-xl">
             Al Mezoon Marbles & Granites Industries LLC is a leading UAE-based supplier, fabricator, and installer of marble, granite, quartz, and porcelain. Trusted for over 25 years to deliver timeless stone craftsmanship.
           </p>
         </div>
@@ -124,7 +205,7 @@ const Hero = () => {
           ].map((card, index) => (
             <div
               key={index}
-              className={`group relative bg-slate-800/40 backdrop-blur-xl p-8 rounded-3xl text-center border ${card.border} hover:scale-110 transition-all duration-700 shadow-2xl hover:shadow-cyan-300/20`}
+              className={`group relative bg-slate-800/70 backdrop-blur-xl p-8 rounded-3xl text-center border ${card.border} hover:scale-110 transition-all duration-700 shadow-2xl hover:shadow-cyan-300/20`}
             >
               <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
               <div className="relative z-10 flex flex-col items-center mb-6">
