@@ -2,16 +2,16 @@ import React from 'react';
 import { Sparkles, Star, Diamond, Gem } from 'lucide-react';
 
 // Import product images from available assets
-import PremiumWork1 from '../../assets/Images/premium_work_1.webp';
-import PremiumWork2 from '../../assets/Images/premium_work_2.webp';
-import PremiumWork3 from '../../assets/Images/premium_work_3.webp';
-import PremiumWork4 from '../../assets/Images/premium_work_4.webp';
-import PremiumMaterial1 from '../../assets/Images/premium_material_1.webp';
-import PremiumMaterial2 from '../../assets/Images/premium_material_2.webp';
-import Story1 from '../../assets/Images/story_1.webp';
-import Story2 from '../../assets/Images/story_2.webp';
-import Story3 from '../../assets/Images/story_3.webp';
-import Story4 from '../../assets/Images/story_4.webp';
+import PremiumWork1 from '../../assets/Images/premium_work_1_14_11zon.webp';
+import PremiumWork2 from '../../assets/Images/premium_work_2_15_11zon.webp';
+import PremiumWork3 from '../../assets/Images/premium_work_3_16_11zon.webp';
+import PremiumWork4 from '../../assets/Images/premium_work_4_17_11zon.webp';
+import PremiumMaterial1 from '../../assets/Images/premium_material_1_12_11zon.webp';
+import PremiumMaterial2 from '../../assets/Images/premium_material_2_13_11zon.webp';
+import Story1 from '../../assets/Images/story_1_18_11zon.webp';
+import Story2 from '../../assets/Images/story_2_19_11zon.webp';
+import Story3 from '../../assets/Images/story_3_20_11zon.webp';
+import Story4 from '../../assets/Images/story_4_21_11zon.webp';
 
 const products = [
   {

@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa"
 import { HashLink } from "react-router-hash-link";
 
 // Import background image
-import Story2 from '../../assets/Images/story_2.webp';
+import Story2 from '../../assets/Images/story_2_19_11zon.webp';
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);

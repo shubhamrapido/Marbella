@@ -9,16 +9,16 @@ import {
 } from "lucide-react";
 
 // Import service showcase images
-import Installation1 from '../../assets/Images/installation_1.webp';
-import Installation2 from '../../assets/Images/installation_2.webp';
-import Installation3 from '../../assets/Images/installation_3.webp';
-import MaterialSupply1 from '../../assets/Images/materialsupply_1.webp';
-import MaterialSupply2 from '../../assets/Images/materialsupply_2.webp';
-import MaterialSupply3 from '../../assets/Images/materialsupply_3.webp';
-import PremiumWork1 from '../../assets/Images/premium_work_1.webp';
-import PremiumWork2 from '../../assets/Images/premium_work_2.webp';
-import PremiumWork3 from '../../assets/Images/premium_work_3.webp';
-import HomeServicesBg from '../../assets/Images/home_services_bg.webp';
+import Installation1 from '../../assets/Images/installation_1_6_11zon.webp';
+import Installation2 from '../../assets/Images/installation_2_7_11zon.webp';
+import Installation3 from '../../assets/Images/installation_3_8_11zon.webp';
+import MaterialSupply1 from '../../assets/Images/materialsupply_1_9_11zon.webp';
+import MaterialSupply2 from '../../assets/Images/materialsupply_2_10_11zon.webp';
+import MaterialSupply3 from '../../assets/Images/materialsupply_3_11_11zon.webp';
+import PremiumWork1 from '../../assets/Images/premium_work_1_14_11zon.webp';
+import PremiumWork2 from '../../assets/Images/premium_work_2_15_11zon.webp';
+import PremiumWork3 from '../../assets/Images/premium_work_3_16_11zon.webp';
+import HomeServicesBg from '../../assets/Images/home_services_bg_1_11zon.webp';
 
 const services = [
   {
