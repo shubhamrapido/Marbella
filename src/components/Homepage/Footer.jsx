@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa"
 import { HashLink } from "react-router-hash-link";
 
 // Import background image
-import Quartzite from '../../assets/Images/quartzite.jpg';
+import Story2 from '../../assets/Images/story_2.jpg';
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -29,7 +29,7 @@ const Footer = () => {
       {/* Fixed Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={Quartzite}
+          src={Story2}
           alt="Footer background"
           className="w-full h-full object-cover"
         />

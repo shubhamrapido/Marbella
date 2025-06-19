@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { clients } from '../../data/clientData';
 
 // Import background image
-import Marble from '../../assets/Images/marble.jpg';
+import PremiumMaterial1 from '../../assets/Images/premium_material_1.jpg';
 
 const ClientsSection = () => {
   const [hoveredClient, setHoveredClient] = useState(null);
@@ -24,7 +24,7 @@ const ClientsSection = () => {
       {/* Fixed Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={Marble}
+          src={PremiumMaterial1}
           alt="Clients background"
           className="w-full h-full object-cover"
         />

@@ -9,16 +9,16 @@ import {
 } from "lucide-react";
 
 // Import service showcase images
-import Product1 from '../../assets/Images/Product_1.webp';
-import Product2 from '../../assets/Images/Product_2.webp';
-import Product3 from '../../assets/Images/Product_3.webp';
-import Product4 from '../../assets/Images/Product_4.webp';
-import Product5 from '../../assets/Images/Product_5.webp';
-import Product6 from '../../assets/Images/Product_6.webp';
-import About1 from '../../assets/Images/About1.jpg';
-import About2 from '../../assets/Images/About2.jpg';
-import About3 from '../../assets/Images/About3.jpg';
-import Granite from '../../assets/Images/granite.jpg';
+import Installation1 from '../../assets/Images/installation_1.jpg';
+import Installation2 from '../../assets/Images/installation_2.jpg';
+import Installation3 from '../../assets/Images/installation_3.jpg';
+import MaterialSupply1 from '../../assets/Images/materialsupply_1.jpg';
+import MaterialSupply2 from '../../assets/Images/materialsupply_2.jpg';
+import MaterialSupply3 from '../../assets/Images/materialsupply_3.jpg';
+import PremiumWork1 from '../../assets/Images/premium_work_1.jpg';
+import PremiumWork2 from '../../assets/Images/premium_work_2.jpg';
+import PremiumWork3 from '../../assets/Images/premium_work_3.jpg';
+import HomeServicesBg from '../../assets/Images/home_services_bg.jpg';
 
 const services = [
   {
@@ -28,7 +28,7 @@ const services = [
       "Custom cutting and shaping of stones with high-precision finishes, including kitchen countertops, vanity tops, and wall cladding.",
     icon: <HardHat className="w-12 h-12 text-cyan-400" />,
     color: "from-blue-500 to-cyan-400",
-    images: [Product1, Product2, Product3], // Fabrication showcase
+    images: [PremiumWork1, PremiumWork2, PremiumWork3], // Fabrication showcase
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const services = [
       "On-site expert installation of marble, granite, quartz, and porcelain with full project management for perfect finish.",
     icon: <Layers3 className="w-12 h-12 text-indigo-400" />,
     color: "from-indigo-500 to-blue-400",
-    images: [About1, About2, About3], // Installation showcase
+    images: [Installation1, Installation2, Installation3], // Installation showcase
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const services = [
       "Premium stones sourced from top global quarries, including marble, granite, quartz, and porcelain in bulk quantities.",
     icon: <Truck className="w-12 h-12 text-blue-400" />,
     color: "from-cyan-500 to-blue-500",
-    images: [Product4, Product5, Product6], // Material showcase
+    images: [MaterialSupply1, MaterialSupply2, MaterialSupply3], // Material showcase
   },
 ];
 
@@ -62,7 +62,7 @@ const Services = () => {
       {/* Fixed Background Image */}
       <div className="absolute inset-0">
         <img
-          src={Granite}
+          src={HomeServicesBg}
           alt="Services background"
           className="w-full h-full object-cover"
         />

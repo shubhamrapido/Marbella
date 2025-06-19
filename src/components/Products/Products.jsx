@@ -1,24 +1,24 @@
 import React from 'react';
 import { Sparkles, Star, Diamond, Gem } from 'lucide-react';
 
-// Import product images
-import Product1 from '../../assets/Images/Product_1.webp';
-import Product2 from '../../assets/Images/Product_2.webp';
-import Product3 from '../../assets/Images/Product_3.webp';
-import Product4 from '../../assets/Images/Product_4.webp';
-import Product5 from '../../assets/Images/Product_5.webp';
-import Product6 from '../../assets/Images/Product_6.webp';
-import Granite from '../../assets/Images/granite.jpg';
-import Marble from '../../assets/Images/marble.jpg';
-import Limestone from '../../assets/Images/limestone.jpg';
-import Quartzite from '../../assets/Images/quartzite.jpg';
+// Import product images from available assets
+import PremiumWork1 from '../../assets/Images/premium_work_1.jpg';
+import PremiumWork2 from '../../assets/Images/premium_work_2.jpg';
+import PremiumWork3 from '../../assets/Images/premium_work_3.jpg';
+import PremiumWork4 from '../../assets/Images/premium_work_4.jpg';
+import PremiumMaterial1 from '../../assets/Images/premium_material_1.jpg';
+import PremiumMaterial2 from '../../assets/Images/premium_material_2.jpg';
+import Story1 from '../../assets/Images/story_1.jpg';
+import Story2 from '../../assets/Images/story_2.jpg';
+import Story3 from '../../assets/Images/story_3.jpg';
+import Story4 from '../../assets/Images/story_4.jpg';
 
 const products = [
   {
     id: 1,
     name: 'Carrara White Marble',
     type: 'Premium Marble',
-    image: Product1,
+    image: PremiumWork1,
     price: 'From AED 180/sqm',
     description: 'Classic white marble with elegant veining, perfect for luxury countertops and flooring.',
     features: ['Heat Resistant', 'Polished Finish', 'Natural Veining'],
@@ -29,7 +29,7 @@ const products = [
     id: 2,
     name: 'Black Galaxy Granite',
     type: 'Premium Granite',
-    image: Product2,
+    image: PremiumWork2,
     price: 'From AED 150/sqm',
     description: 'Stunning black granite with golden speckles, ideal for modern kitchen countertops.',
     features: ['Scratch Resistant', 'Polished Surface', 'Uniform Pattern'],
@@ -40,7 +40,7 @@ const products = [
     id: 3,
     name: 'Emperador Brown Marble',
     type: 'Luxury Marble',
-    image: Product3,
+    image: PremiumWork3,
     price: 'From AED 200/sqm',
     description: 'Rich brown marble with distinctive veining, perfect for elegant interior applications.',
     features: ['Natural Beauty', 'Durable', 'Unique Patterns'],
@@ -51,7 +51,7 @@ const products = [
     id: 4,
     name: 'Calacatta Gold Marble',
     type: 'Premium Marble',
-    image: Product4,
+    image: PremiumWork4,
     price: 'From AED 250/sqm',
     description: 'Luxurious white marble with bold gold veining, the epitome of elegance.',
     features: ['Gold Veining', 'High Polish', 'Premium Quality'],
@@ -62,7 +62,7 @@ const products = [
     id: 5,
     name: 'Kashmir White Granite',
     type: 'Premium Granite',
-    image: Product5,
+    image: PremiumMaterial1,
     price: 'From AED 140/sqm',
     description: 'Light colored granite with subtle patterns, perfect for bright modern spaces.',
     features: ['Light Tone', 'Easy Maintenance', 'Versatile Design'],
@@ -73,7 +73,7 @@ const products = [
     id: 6,
     name: 'Verde Guatemala Marble',
     type: 'Exotic Marble',
-    image: Product6,
+    image: PremiumMaterial2,
     price: 'From AED 220/sqm',
     description: 'Striking green marble with white veining, perfect for statement pieces.',
     features: ['Unique Color', 'Natural Veining', 'Premium Grade'],
@@ -84,7 +84,7 @@ const products = [
     id: 7,
     name: 'Red Dragon Granite',
     type: 'Premium Granite',
-    image: Granite,
+    image: Story1,
     price: 'From AED 160/sqm',
     description: 'Bold red granite with dynamic patterns, ideal for creating dramatic spaces.',
     features: ['Bold Color', 'Dynamic Patterns', 'High Durability'],
@@ -95,7 +95,7 @@ const products = [
     id: 8,
     name: 'Travertine Classic',
     type: 'Natural Stone',
-    image: Marble,
+    image: Story2,
     price: 'From AED 120/sqm',
     description: 'Classic travertine with natural texture, perfect for traditional and modern designs.',
     features: ['Natural Texture', 'Versatile', 'Eco-Friendly'],
@@ -106,7 +106,7 @@ const products = [
     id: 9,
     name: 'Silver Creek Limestone',
     type: 'Natural Limestone',
-    image: Limestone,
+    image: Story3,
     price: 'From AED 110/sqm',
     description: 'Elegant limestone with subtle gray tones, ideal for contemporary applications.',
     features: ['Subtle Tones', 'Smooth Finish', 'Weather Resistant'],
@@ -117,7 +117,7 @@ const products = [
     id: 10,
     name: 'Crystal Blue Quartzite',
     type: 'Premium Quartzite',
-    image: Quartzite,
+    image: Story4,
     price: 'From AED 190/sqm',
     description: 'Stunning blue quartzite with crystalline structure, perfect for luxury applications.',
     features: ['Crystal Structure', 'Unique Blue Tones', 'Ultra Durable'],

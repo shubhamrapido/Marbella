@@ -2,40 +2,29 @@ import React from "react";
 import { Sparkles, Award, Crown, Star, Waves, Gem, Mountain } from "lucide-react";
 
 // Import company images
-import About1 from '../../assets/Images/About1.jpg';
-import About2 from '../../assets/Images/About2.jpg';
-import About3 from '../../assets/Images/About3.jpg';
-import About4 from '../../assets/Images/About4.jpg';
-import Product1 from '../../assets/Images/Product_1.webp';
-import Product2 from '../../assets/Images/Product_2.webp';
-import Product3 from '../../assets/Images/Product_3.webp';
-import Product4 from '../../assets/Images/Product_4.webp';
-import Marble from '../../assets/Images/marble.jpg';
-import Granite from '../../assets/Images/granite.jpg';
+import Story1 from '../../assets/Images/story_1.jpg';
+import Story2 from '../../assets/Images/story_2.jpg';
+import Story3 from '../../assets/Images/story_3.jpg';
+import Story4 from '../../assets/Images/story_4.jpg';
+import PremiumWork1 from '../../assets/Images/premium_work_1.jpg';
+import PremiumWork2 from '../../assets/Images/premium_work_2.jpg';
+import PremiumWork3 from '../../assets/Images/premium_work_3.jpg';
+import PremiumWork4 from '../../assets/Images/premium_work_4.jpg';
+import PremiumMaterial1 from '../../assets/Images/premium_material_1.jpg';
+import PremiumMaterial2 from '../../assets/Images/premium_material_2.jpg';
 
 const About = () => {
   // Main showcase images
-  const mainImages = [About1, About2, About3, About4];
+  const mainImages = [Story1, Story2, Story3, Story4];
   
   // Additional work showcase images
-  const workShowcase = [Product1, Product2, Product3, Product4];
+  const workShowcase = [PremiumWork1, PremiumWork2, PremiumWork3, PremiumWork4];
   
   // Material showcase
-  const materialImages = [Marble, Granite];
+  const materialImages = [PremiumMaterial1, PremiumMaterial2];
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 overflow-hidden">
-      {/* Fixed Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={About1}
-          alt="About background"
-          className="w-full h-full object-cover"
-        />
-        {/* Enhanced overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 via-blue-950/30 to-indigo-950/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/25" />
-      </div>
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-1">

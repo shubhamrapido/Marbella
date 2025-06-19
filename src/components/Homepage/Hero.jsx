@@ -10,10 +10,10 @@ import {
 } from 'react-icons/fa';
 
 // Import carousel images
-import About1 from '../../assets/Images/About1.jpg';
-import About2 from '../../assets/Images/About2.jpg';
-import About3 from '../../assets/Images/About3.jpg';
-import About4 from '../../assets/Images/About4.jpg';
+import HomepageTop1 from '../../assets/Images/homepage_top_1.jpg';
+import HomepageTop2 from '../../assets/Images/homepage_top_2.jpg';
+import HomepageTop3 from '../../assets/Images/homepage_top_3.jpg';
+import HomepageTop4 from '../../assets/Images/homepage_top_4.jpg';
 
 const socialIcons = [
   { Icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/almezoon_2000/' },
@@ -24,22 +24,22 @@ const socialIcons = [
 // Carousel images array
 const carouselImages = [
   {
-    src: About1,
+    src: HomepageTop1,
     title: "Premium Stone Craftsmanship",
     description: "Luxury marble installations for elite projects"
   },
   {
-    src: About2,
+    src: HomepageTop2,
     title: "Expert Fabrication",
     description: "State-of-the-art manufacturing facility"
   },
   {
-    src: About3,
+    src: HomepageTop3,
     title: "Professional Installation",
     description: "Precision fitting by skilled craftsmen"
   },
   {
-    src: About4,
+    src: HomepageTop4,
     title: "Quality Assurance",
     description: "25+ years of excellence in UAE"
   }

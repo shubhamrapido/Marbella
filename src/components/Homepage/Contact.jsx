@@ -2,7 +2,7 @@ import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 // Import background image
-import About4 from '../../assets/Images/About4.jpg';
+import PremiumMaterial2 from '../../assets/Images/premium_material_2.jpg';
 
 const ContactSection = () => {
   return (
@@ -13,7 +13,7 @@ const ContactSection = () => {
       {/* Fixed Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={About4}
+          src={PremiumMaterial2}
           alt="Contact background"
           className="w-full h-full object-cover"
         />
